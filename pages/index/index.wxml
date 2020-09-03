@@ -1,10 +1,17 @@
 <!--index.wxml-->
+<!-- 首页搜素 -->
+<view class="search_background center" bindtap="onSearch">
+	<view class="search" bindtap="onSearch">
+		<image src="/img/icon/icon_search_ad.png"></image>
+	</view>
+</view>
+
 <scroll-view class=".scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
 		<view class="header">
 			<!-- 首页轮播 -->
 			<view class='carousel'>
-				<swiper class='carousel_swiper' indicator-dots="true" indicator-color="#f4f4f4" indicator-active-color="#4eb8b8" autoplay="true" interval='5000' circular='true'>
+				<swiper class='carousel_swiper' indicator-dots="false" indicator-color="#f4f4f4" indicator-active-color="#4eb8b8" autoplay="true" interval='5000' circular='true'>
 					<block wx:for="{{banners}}" wx:key="key">
 						<swiper-item bindtap='chomeCarouselClick' data-url='{{item.url}}'>
 							<image class="carouselImg" src="{{item.imageUrl}}" mode='scaleToFill' data-index="{{index}}" binderror="onBannerError"></image>
@@ -12,77 +19,18 @@
 					</block>
 				</swiper>
 			</view>
-			<!-- 首页搜素 -->
-			<view class="search_background" bindtap="onSearch" />
-			<view class="search" bindtap="onSearch">
-				<image src="/img/icon/icon_list.png"></image>
-				<image src="/img/icon/icon_search.png"></image>
-			</view>
-			<!-- 页面导航 -->
-			<view class="option">
-				<image class="background" src="/img/background/home_options.jpg"></image>
-				<view class="buttons">
-					<view class="button" wx:for="{{4}}" wx:key="index" data-index="{{index}}" catchtap="onNavigator">
-					</view>
-				</view>
-			</view>
 		</view>
 
 		<!-- 平台海报 -->
 		<view class="case-list">
-			<text  class="header">平台推荐</text>
-			<image class="img" src="/img/adcode/post0.jpg"></image>
-			<image class="img" src="/img/adcode/post1.jpg"></image>
-			<image class="img" src="/img/adcode/post2.jpg"></image>
+			<view class="body">
+				<view class="body_left">
+					<v_anchor class="item" wx:for="{{leftAnchors}}" wx:key="index" imgurl="{{item.img}}" />
+				</view>
+				<view class="body_right">
+					<v_anchor class="item" wx:for="{{rightAnchors}}" wx:key="index" imgurl="{{item.img}}" />
+				</view>
+			</view>
 		</view>
-
-		<!-- 猜你喜欢 -->
-		<!-- <view class="case-list">
-			<view class="header">
-				<text>猜你喜欢</text>
-				<view class="more" data-index="猜你喜欢" catchtap="onClick">
-					<text>更多</text>
-					<image class="enter" src="/img/icon/icon_enter.png"></image>
-				</view>
-			</view>
-			<scroll-view class="body_container" scroll-x="true" scroll-y="false">
-				<view class="body">
-					<view class="item" wx:for="{{5}}" wx:key="index" catchtap="onClickItem">
-						<image src="/img/adcode/receive_order.jpg">
-						</image>
-						<view class="section_down">
-							<text class="category">饰品带货</text>
-							<text class="num">参与主播3.5万+</text>
-						</view>
-						<image class="like" src="/img/icon/icon_like.png">
-						</image>
-					</view>
-				</view>
-			</scroll-view>
-		</view> -->
-		<!-- 平台推荐 -->
-		<!-- <view class="case-list">
-			<view class="header">
-				<text>平台推荐</text>
-				<view class="more" data-index="平台推荐" catchtap="onClick">
-					<text>更多</text>
-					<image class="enter" src="/img/icon/icon_enter.png"></image>
-				</view>
-			</view>
-			<scroll-view class="body_container" scroll-x="true" scroll-y="false">
-				<view class="body">
-					<view class="item" wx:for="{{5}}" wx:key="index" catchtap="onClickItem">
-						<image src="/img/adcode/personal_center.jpg">
-						</image>
-						<view class="section_down">
-							<text class="category">饰品带货</text>
-							<text class="num">参与主播3.5万+</text>
-						</view>
-						<image class="like" src="/img/icon/icon_like.png">
-						</image>
-					</view>
-				</view>
-			</scroll-view>
-		</view> -->
 	</view>
 </scroll-view>

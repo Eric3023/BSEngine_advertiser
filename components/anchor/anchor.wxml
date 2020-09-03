@@ -1,0 +1,14 @@
+	<view class="item">
+		<view class="section_up">
+			<image class="img" src="{{imgurl}}" mode="widthFix" />
+			<image class="flag" src="{{index==0? '/img/icon/icon_first.png':'/img/icon/icon_chance.png'}}" />
+			<image class="hot" wx:if="{{index==0}}" src="/img/icon/icon_hot.png" />
+		</view>
+		<view class="section_down">
+			<view class="goods">
+				<text class="ell">清水河畔</text>
+				<text class="ell">粉丝100万</text>
+			</view>
+			<text class="price">200元</text>
+		</view>
+	</view>

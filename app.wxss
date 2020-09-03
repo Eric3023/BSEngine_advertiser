@@ -30,6 +30,13 @@ button::after {
   border: none;
 }
 
+.center{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 /* 空数据 */
 .empty {
   width: 100%;

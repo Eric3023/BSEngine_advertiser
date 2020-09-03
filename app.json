@@ -47,17 +47,17 @@
       },
       {
         "pagePath": "pages/activity/activity",
-        "text": "活动",
-        "iconPath": "img/tab/activity_normal.png",
-        "selectedIconPath": "img/tab/activity_selected.png",
+        "text": "营销榜",
+        "iconPath": "img/tab/rank_normal.png",
+        "selectedIconPath": "img/tab/rank_selected.png",
         "color": "#000000",
         "selectedColor": "#f3864b"
       },
       {
         "pagePath": "pages/media/media",
-        "text": "媒体",
-        "iconPath": "img/tab/media_normal.png",
-        "selectedIconPath": "img/tab/media_selected.png",
+        "text": "活动",
+        "iconPath": "img/tab/activity_normal.png",
+        "selectedIconPath": "img/tab/activity_selected.png",
         "color": "#000000",
         "selectedColor": "#f3864b"
       },
@@ -85,18 +85,7 @@
     }
   },
   "plugins": {
-    "routePlan": {
-      "version": "1.0.5",
-      "provider": "wx50b5593e81dd937a"
-    },
-    "chooseLocation": {
-      "version": "1.0.2",
-      "provider": "wx76a9a06e5b4e693e"
-    },
-    "subway": {
-      "version": "1.0.9",
-      "provider": "wx6aaf93c4435fa1c1"
-    }
+    
   },
   "servicemarket": true
 }
