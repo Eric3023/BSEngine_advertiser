@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <!-- 首页搜素 -->
 <view class="search_background center" bindtap="onSearch">
-	<view class="search" bindtap="onSearch">
+	<view class="search">
 		<image src="/img/icon/icon_search_ad.png"></image>
 	</view>
 </view>
