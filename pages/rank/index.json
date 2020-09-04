@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "search_view": "/components/search_view/index",
+    "anchor": "/components/anchor_view_1/index"
+  },
+  "navigationBarTitleText": "营销榜"
+}

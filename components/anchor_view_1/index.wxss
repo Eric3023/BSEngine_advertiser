@@ -1,0 +1,74 @@
+.container {
+  width: 730rpx;
+  margin: 15rpx 10rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  box-shadow: 0 0 8rpx #e2e6e7;
+}
+
+.photo {
+  width: 250rpx;
+  height: 305rpx;
+  background-color: yellowgreen;
+}
+
+.info {
+  width: 420rpx;
+  margin: 0 25rpx;
+  font-size: 28rpx;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.margin_top {
+  margin-top: 20rpx;
+}
+
+.name {
+  font-size: 32rpx;
+  margin-top: 18rpx;
+  color: black;
+}
+
+.desc {
+  color: #242424;
+  margin-top: 10rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+}
+
+.follow {
+  margin-left: 100rpx;
+}
+
+.flag {
+  width: 100%;
+  color: #f38c02;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+}
+
+.flag2 {
+  width: 100%;
+  color: #f38c02;
+  display: flex;
+  flex-direction: column;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+}
+
+.type {
+  display: flex;
+  flex-direction: column;
+}

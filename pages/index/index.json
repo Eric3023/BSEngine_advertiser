@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "v_mask": "/components/mask/index",
-    "v_anchor": "/components/anchor/anchor"
+    "v_anchor": "/components/anchor_view_0/index",
+    "search_view": "/components/search_view/index"
   },
   "navigationBarTitleText": "首页"
 }

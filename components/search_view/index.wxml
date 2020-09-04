@@ -1,0 +1,6 @@
+<view class="search_background center">
+	<view class="search" catchtap="onSearch">
+		<image class="icon" src="/img/icon/icon_search_ad.png"></image>
+		<image class="icon" src="/img/icon/icon_list_ad.png" catchtap="onMenu"></image>
+	</view>
+</view>

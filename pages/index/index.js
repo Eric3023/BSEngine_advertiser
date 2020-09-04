@@ -164,6 +164,15 @@ Page({
   },
 
   /**
+   * 点击顶部分类按钮
+   */
+  onMenu(event) {
+    wx.navigateTo({
+      url: '/pages/category/index',
+    })
+  },
+
+  /**
    * 关闭优惠霸屏
    */
   onCloseCoupon() {

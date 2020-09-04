@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  margin: 120rpx 22rpx;
+}
+
+.header {
+  width: 160rpx;
+  height: 64rpx;
+  background-color: #ffbb00;
+  color: white;
+  font-size: 32rpx;
+  margin: 10rpx 8rpx;
+  border-radius: 10rpx;
+  line-height: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 160rpx;
+  height: 64rpx;
+  background-color: #d6d6d6;
+  color: black;
+  font-size: 32rpx;
+  margin: 10rpx 8rpx;
+  border-radius: 10rpx;
+  line-height: 0;
+}

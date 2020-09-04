@@ -1,0 +1,28 @@
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20rpx 0;
+}
+
+.item {
+  width: 33.3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #363636;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  margin-bottom: 28rpx;
+}
+
+.item .icon {
+  width: 102rpx;
+  height: 102rpx;
+}
+
+.item .name {
+  margin-top: 10rpx;
+}

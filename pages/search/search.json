@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "search": "/components/search/search"
+    "search": "/components/search/search",
+    "anchor": "/components/anchor_view_1/index"
   }
 }

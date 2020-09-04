@@ -1,0 +1,14 @@
+<!-- 搜素 -->
+<scroll-view class=".scroll" scroll-x="false" scroll-y="true">
+	<view class="container">
+		<search_view bind:search="onSearch" bind:menu="onMenu" />
+		<view class="body">
+			<view class="list">
+				<view class="item" wx:for="{{plateforms}}" wx:key="index" data-category="{{index}}" catchtap="onClickItem">
+					<image class="background" src="{{item.icon}}"></image>
+					<text class="name">{{item.name}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>

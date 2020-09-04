@@ -1,0 +1,12 @@
+<!-- 搜素 -->
+<scroll-view class=".scroll" scroll-x="false" scroll-y="true">
+	<view class="container">
+		<search_view bind:search="onSearch" />
+		<view class="body">
+			<text class="header center" data-category="{{-1}}" catchtap="onClickItem">不限行业</text>
+			<view class="list">
+				<text class="item center" wx:for="{{10}}"  wx:key="index" data-category="{{index}}" catchtap="onClickItem">分类{{index}}</text>
+			</view>
+		</view>
+	</view>
+</scroll-view>

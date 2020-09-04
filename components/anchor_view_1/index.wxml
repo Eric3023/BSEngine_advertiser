@@ -1,0 +1,32 @@
+<view class="container">
+	<image class="photo" src="{{imgurl}}"></image>
+	<view class="info">
+		<text class="name">{{name}}</text>
+		<text class="desc">签名：{{desc}}</text>
+		<!-- 搜索 -->
+		<view class="type" hidden="{{type!=0}}">
+			<view class="contact margin_top">
+				<text class="star">{{star}}关注</text>
+				<text class="follow">{{follow}}粉丝</text>
+			</view>
+			<text class="margin_top">{{like}}万赞</text>
+		</view>
+		<!-- 分类 -->
+		<view class="type" hidden="{{type!=1}}">
+			<view class="contact margin_top">
+				<text class="star">{{star}}关注</text>
+				<text class="follow">{{follow}}粉丝</text>
+			</view>
+			<text class="margin_top">{{like}}万赞</text>
+			<text class="margin_top flag">商业价值高</text>
+		</view>
+		<!-- 榜单 -->
+		<view class="type" hidden="{{type!=2}}">
+			<view class="contact margin_top">
+				<text class="star">接单数{{orders}}</text>
+				<text class="follow">健康度{{grade}}</text>
+			</view>
+			<text class="margin_top flag2">营销价值高</text>
+		</view>
+	</view>
+</view>

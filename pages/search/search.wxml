@@ -4,9 +4,10 @@
 		<search show="{{show}}" placeholder="输入搜索内容" history="{{history}}" hot="{{hot}}" bind:onConfirm="onConfirm" bind:onClear="onClear">
 		</search>
 		<!-- 搜素结果 -->
-		<image class="title" hidden="{{show}}" src="/img/icon/icon_search_list.jpg" />
+		<!-- <image class="title" hidden="{{show}}" src="/img/icon/icon_search_list.jpg" /> -->
 		<view class="body" hidden="{{show}}">
 			<block wx:for="{{10}}" wx:key="index">
+				<anchor type="{{0}}" imgurl="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1306508493,2006189766&fm=26&gp=0.jpg" name="清水河畔" desc="那年清水河畔，回眸一笑，呜呜呜呜呜呜" star="{{23}}" follow="{{89642}}" like="{{9.1}}" />
 			</block>
 		</view>
 	</view>

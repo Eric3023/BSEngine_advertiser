@@ -1,10 +1,6 @@
 <!--index.wxml-->
 <!-- 首页搜素 -->
-<view class="search_background center" bindtap="onSearch">
-	<view class="search">
-		<image src="/img/icon/icon_search_ad.png"></image>
-	</view>
-</view>
+<search_view bind:search="onSearch"  bind:menu="onMenu"/>
 
 <scroll-view class=".scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
