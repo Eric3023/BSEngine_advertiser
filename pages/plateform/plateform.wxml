@@ -1,6 +1,0 @@
-<view class="container">
-	<view class="item" wx:for="{{plateforms}}" wx:key="index" data-id="{{item.id}}" catchtap="onClickItem">
-		<image class="icon" src="{{item.icon}}"></image>
-		<text class="name">{{item.name}}</text>	
-	</view>
-</view>
