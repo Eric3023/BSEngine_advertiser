@@ -1,0 +1,58 @@
+<!-- 搜素 -->
+<scroll-view class=".scroll" scroll-x="false" scroll-y="true">
+	<view class="container">
+		<search_view bind:search="onSearch" bind:menu="onMenu" />
+		<view class="body">
+			<!-- 平台分类 -->
+			<view class="param" catchtap="onClickItem" data-type="平台分类">
+				<view class="plateform background">
+					<text class="title">平台分类</text>
+				</view>
+				<view class="sub_container">
+					<text>不限</text>
+					<image class="icon" src="/img/icon/icon_enter.png" />
+				</view>
+			</view>
+			<!-- 常见分类 -->
+			<view class="param" catchtap="onClickItem" data-type="常见分类">
+				<view class="category background">
+					<text class="title">常见分类</text>
+				</view>
+				<view class="sub_container">
+					<text>不限</text>
+					<image class="icon" src="/img/icon/icon_enter.png" />
+				</view>
+			</view>
+			<!-- 粉丝数 -->
+			<view class="param" catchtap="onClickItem" data-type="粉丝数">
+				<view class="follower background">
+					<text class="title">粉丝数</text>
+				</view>
+				<view class="sub_container">
+					<text>不限</text>
+					<image class="icon" src="/img/icon/icon_enter.png" />
+				</view>
+			</view>
+			<!-- 价格 -->
+			<view class="param" catchtap="onClickItem" data-type="价格">
+				<view class="price background">
+					<text class="title">价格</text>
+				</view>
+				<view class="sub_container">
+					<text>不限</text>
+					<image class="icon" src="/img/icon/icon_enter.png" />
+				</view>
+			</view>
+			<!-- 受众画像 -->
+			<view class="param" catchtap="onClickItem" data-type="受众画像">
+				<view class="audience background">
+					<text class="title">受众画像</text>
+				</view>
+				<view class="sub_container">
+					<text>不限</text>
+					<image class="icon" src="/img/icon/icon_enter.png" />
+				</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>

@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  margin: 120rpx 22rpx;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 204rpx;
+  height: 74rpx;
+  font-size: 30rpx;
+  margin: 16rpx 14rpx;
+  border-radius: 10rpx;
+  line-height: 0;
+  box-sizing: border-box;
+}
+
+.active{
+  border: 2rpx solid #ffbb00;
+  color: #ffbb00;
+}
+
+.disactive{
+  border: 2rpx solid #c0c0c0;
+  color: #c0c0c0;
+}

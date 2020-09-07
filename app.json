@@ -29,7 +29,9 @@
     "pages/collection/collection",
     "pages/category/index",
     "pages/anchors/index",
-    "pages/rank/index"
+    "pages/rank/index",
+    "pages/categoryRank/index",
+    "pages/price/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

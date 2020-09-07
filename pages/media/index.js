@@ -61,7 +61,7 @@ Page({
    */
   onMenu: function (event) {
     wx.navigateTo({
-      url: '/pages/plateform/index',
+      url: '/pages/categoryRank/index',
     })
   },
 })

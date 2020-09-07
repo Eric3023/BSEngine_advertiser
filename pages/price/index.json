@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "search_view": "/components/search_view/index"
+  }
+}

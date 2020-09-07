@@ -9,7 +9,7 @@
   margin: 120rpx 22rpx;
 }
 
-.header {
+.active {
   width: 160rpx;
   height: 64rpx;
   background-color: #ffbb00;
@@ -26,12 +26,12 @@
   flex-wrap: wrap;
 }
 
-.item {
+.disactive {
   width: 160rpx;
   height: 64rpx;
   background-color: #d6d6d6;
-  color: black;
-  font-size: 32rpx;
+  color: #484848;
+  font-size: 30rpx;
   margin: 10rpx 8rpx;
   border-radius: 10rpx;
   line-height: 0;

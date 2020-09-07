@@ -1,0 +1,11 @@
+<!-- 搜素 -->
+<scroll-view class=".scroll" scroll-x="false" scroll-y="true">
+	<view class="container">
+		<search_view bind:search="onSearch" bind:menu="onMenu" />
+		<view class="body">
+			<view class="list">
+				<text class="item center {{index==0? 'active':'disactive'}}" wx:for="{{5}}"  wx:key="index" data-category="{{index}}" catchtap="onClickItem">{{500*index}}-{{500*index+500}}</text>
+			</view>
+		</view>
+	</view>
+</scroll-view>
