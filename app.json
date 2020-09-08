@@ -5,7 +5,7 @@
     "pages/mine/mine",
     "pages/login/phoneLogin/phoneLogin",
     "pages/login/login",
-    "pages/activity/activity",
+    "pages/orders/index",
     "pages/feedback/feedback",
     "pages/login/code/code",
     "pages/liveData/liveData",

@@ -49,11 +49,12 @@ Page({
    * 进入下级页面
    */
   onClickItem(event) {
-    let index = event.detail.title;
+    let index = event.currentTarget.dataset.title;
+    console.log(`index:${event}`);
     switch (index) {
-      case '银行卡':
+      case '我的订单':
         wx.navigateTo({
-          url: '/pages/banks/banks',
+          url: '/pages/orders/index',
         })
         break;
       case '意见反馈':

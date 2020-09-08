@@ -31,7 +31,7 @@
 		</view>
 		<!-- 2.功能列表 -->
 		<view class="body_container">
-			<option wx:for="{{user_datas}}" wx:key="index" bindclickItem="onClickItem" img="{{item.icon}}" content="{{item.title}}" info="{{item.info}}" num="{{item.num}}"/>
+			<option wx:for="{{user_datas}}" wx:key="index" catchtap="onClickItem" data-title="{{item.title}}" img="{{item.icon}}" content="{{item.title}}" info="{{item.info}}" num="{{item.num}}"/>
 		</view>
 	</view>
 </scroll-view>
