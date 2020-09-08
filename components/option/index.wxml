@@ -1,0 +1,6 @@
+<view class="container">
+	<image class="icon" src="{{img}}"></image>
+	<text class="content">{{content}}</text>
+	<text class="info round" wx:if="{{info}}">{{info}}</text>
+	<text class="info circle" wx:if="{{num}}">{{num}}</text>
+</view>

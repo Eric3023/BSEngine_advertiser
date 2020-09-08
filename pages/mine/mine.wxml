@@ -3,36 +3,35 @@
 	<view class="container">
 		<!-- 1.用户信息 -->
 		<view class="header_container">
-			<!-- 背景 -->
-			<image class="background" src="/img/background/mine.jpg"></image>
-			<!-- 1.1 用户简介：头像和手机号 -->
-			<view class="user_info">
-				<v_user class="header_user_container" authored="{{authored}}" uicon="{{user_info.uicon}}" bind:getWxUserInfo="getWxUserInfo" uid="{{user_info.uid}}" flag="{{user_info.flag}}" />
-				<text class="authentication" catchtap="onWithdraw">提取现金</text>
+			<view class="header">
+				<image class="icon" src="/img/mine/icon_money_ad.png"></image>
 			</view>
-			<!-- 1.2 账户余额 -->
-			<view class="header_user_balance">
-				<view class="item" catchtap="onClick" data-index="我的喜欢">
-					<text>400</text>
-					<text>我的喜欢</text>
+			<!-- 1.1 用户简介：头像和手机号 -->
+			<view class="content">
+				<view class="user_info">
+					<v_user class="header_user_container" authored="{{authored}}" uicon="{{user_info.uicon}}" bind:getWxUserInfo="getWxUserInfo" uid="{{user_info.uid}}" flag="{{user_info.flag}}" />
 				</view>
-				<view class="item" catchtap="onClick" data-index="已经播报">
-					<text>35</text>
-					<text>已经播报</text>
+				<!-- 1.2 账户余额 -->
+				<view class="header_user_balance">
+					<view class="item" catchtap="onClick" data-index="我的喜欢">
+						<text class="fans">2398745</text>
+						<text>关注粉丝</text>
+					</view>
+					<view class="item" catchtap="onWithdraw" data-index="我的收益">
+						<view class="money_container">
+							<text class="money">70019080</text>
+							<text class="rmb">（元）</text>
+						</view>
+						<text>账户余额</text>
+					</view>
 				</view>
-				<view class="item" catchtap="onWithdraw" data-index="我的收益">
-					<text>7000</text>
-					<text>收益（元）</text>
-				</view>
+				<!-- 1.3 提取现金 -->
+				<text class="authentication" catchtap="onWithdraw">余额充值</text>
 			</view>
 		</view>
 		<!-- 2.功能列表 -->
 		<view class="body_container">
-			<v_setting wx:for="{{user_datas}}" wx:key="index" icon="{{item.icon}}" title="{{item.title}}" bindclickItem="onClickItem" />
-		</view>
-		<!-- 3.尾部提示 -->
-		<view class="tail_container">
-			<text>没有更多了</text>
+			<option wx:for="{{user_datas}}" wx:key="index" bindclickItem="onClickItem" img="{{item.icon}}" content="{{item.title}}" info="{{item.info}}" num="{{item.num}}"/>
 		</view>
 	</view>
 </scroll-view>

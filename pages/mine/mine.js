@@ -19,11 +19,10 @@ Page({
       flag: false,//是否缓存用户信息
     },
     user_datas: [
-      { icon: "/img/mine/icon_mine_collection.jpg", title: "银行卡" },
-      { icon: "/img/mine/icon_mine_rmb.jpg", title: "订单规则" },
-      // { icon: "/img/mine/icon_mine_quan.jpg", title: "意见反馈" },
-      { icon: "/img/mine/icon_mine_proxy.jpg", title: "意见反馈" },
-      { icon: "/img/mine/icon_mine_setting.png", title: "设置" }
+      { icon: "/img/mine/icon_order_ad.png", title: "我的订单", info: '待支付订单' },
+      { icon: "/img/mine/icon_recharge_ad.png", title: "充值记录" },
+      { icon: "/img/mine/icon_information_ad.png", title: "消息通知", num: 10 },
+      { icon: "/img/mine/icon_setting_ad.png", title: "设置" }
     ]
   },
 
@@ -87,7 +86,7 @@ Page({
    */
   onLoad: function (option) {
     this._resetUserInfo();
-    this._checkLogin();
+    // this._checkLogin();
     // if (this.data.hasLogin === true) {
     //   this._getBalance();
     // }

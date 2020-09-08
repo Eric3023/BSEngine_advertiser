@@ -1,8 +1,7 @@
 {
   "usingComponents": {
-    "v_setting":"/components/setting/setting",
+    "option":"/components/option/index",
     "v_user":"/components/user/user"
   },
-  "navigationBarTitleText": "个人中心",
-  "navigationStyle": "custom"
+  "navigationBarTitleText": "个人中心"
 }
