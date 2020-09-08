@@ -31,7 +31,9 @@
     "pages/anchors/index",
     "pages/rank/index",
     "pages/categoryRank/index",
-    "pages/price/index"
+    "pages/price/index",
+    "pages/recharge/recharge",
+    "pages/recharge_record/record"
   ],
   "window": {
     "backgroundTextStyle": "light",

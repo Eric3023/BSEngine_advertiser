@@ -57,9 +57,9 @@ Page({
           url: '/pages/orders/index',
         })
         break;
-      case '意见反馈':
+      case '充值记录':
         wx.navigateTo({
-          url: '/pages/feedback/feedback',
+          url: '/pages/recharge_record/record',
         })
         break;
       case '订单规则':
@@ -93,9 +93,9 @@ Page({
     // }
   },
 
-  onWithdraw: function () {
+  onRecharge: function () {
     wx.navigateTo({
-      url: '/pages/withdraw/withdraw',
+      url: '/pages/recharge/recharge',
     })
   },
 
