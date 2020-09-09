@@ -45,7 +45,7 @@ Page({
    */
   onInvoice() {
     wx.navigateTo({
-      url: '/pages/invoice_record/invoice_record',
+      url: '/pages/invoice_record/index',
     })
   },
 

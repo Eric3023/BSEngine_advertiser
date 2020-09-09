@@ -1,0 +1,28 @@
+<scroll-view class=".scroll" scroll-x="false" scroll-y="true">
+	<view class="container">
+		<view class="header">
+			<text>活动选择</text>
+		</view>
+
+		<!-- 订单列表 -->
+		<view class="list">
+			<block wx:for="{{10}}" wx:index="index">
+				<view class="item">
+					<image class="icon" src="/img/plateform/douyin.png"></image>
+					<view class="content">
+						<view>
+							<text class="name">活动1</text>
+							<text class="time">开始时间：2020-09-01</text>
+						</view>
+						<view class="margin">
+							<text class="total">总账号数：30</text>
+							<text class="success">成功号数：30</text>
+						</view>
+						<view class="money margin">消费金额：3000元</view>
+					</view>
+					<view class="state center">投放中</view>
+				</view>
+			</block>
+		</view>
+	</view>
+</scroll-view>

@@ -1,7 +1,7 @@
 <wxs src="../../utils/numberFormat.wxs" module="util" />
 <view class="invoice">
 		<text catchtap="onInvoice">开发票</text>
-	</view>
+</view>
 <view class="container" wx:if="{{records&&records.length!=0}}">
 	<block wx:for="{{records}}" wx:key="index">
 		<view class="mouth_container" wx:if="{{item.first}}">

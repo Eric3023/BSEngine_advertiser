@@ -1,0 +1,13 @@
+<view class="column container">
+	<view class="param column">
+		<view class="title">手机号码</view>
+		<view class="line"></view>
+		<input placeholder="请输入手机号" placeholder-class="holder"></input>
+	</view>
+	<view class="param column">
+		<view class="title">密码</view>
+		<view class="eline"></view>
+		<input placeholder="不含特殊字符的数字，字母组合" placeholder-class="holder"></input>
+	</view>
+	<text class="btn center">登录</text>
+</view>

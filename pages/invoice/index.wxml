@@ -1,0 +1,82 @@
+<form class="container" bindsubmit="onSubmit">
+	<!-- 发票详情 -->
+	<view class="sub_contaner">
+		发票详情
+		<view class="param">
+			发票类型
+			<view class="data">
+				<radio-group class="radio_container" bindchange="onTypeChanged" name="type">
+					<view class="radio_container">
+						<radio style="transform:scale(0.65);" checked="true" value="0"></radio>
+						<text>企业单位</text>
+					</view>
+					<view class="radio_container radio_margin">
+						<radio style="transform:scale(0.65);" value="1"></radio>
+						<text>个人</text>
+					</view>
+				</radio-group>
+			</view>
+		</view>
+		<view class="param" wx:if="{{type==0}}">
+			发票抬头
+			<input placeholder="请输入公司名称" adjust-position="true" name="name"></input>
+			<!-- <view class="data">北京广化寺</view> -->
+		</view>
+		<view class="param" wx:if="{{type==0}}">
+			公司税号
+			<input placeholder="请输入公司税号" adjust-position="true" name="number"></input>
+			<!-- <view class="data">AFD1012154621225JKIO</view> -->
+		</view>
+		<view class="param" wx:if="{{type==1}}">
+			发票抬头
+			<input placeholder="请输入姓名" adjust-position="true" name="name"></input>
+			<!-- <view class="data">AFD1012154621225JKIO</view> -->
+		</view>
+		<view class="param">
+			总金额
+			<view class="data">{{price}}元</view>
+		</view>
+	</view>
+	<!-- 接收方式 -->
+	<view class="sub_contaner">
+		接收方式
+		<view class="param">
+			电子邮箱
+			<input placeholder="请输入接收邮箱" name="email" adjust-position="true"></input>
+			<!-- <view class="data">20179282@qq.com</view> -->
+		</view>
+	</view>
+	<!-- 确认按钮 -->
+	<button class="btn" form-type="submit">提交</button>
+</form>
+
+<!-- 遮罩层 -->
+<v_mask class="mask" wx:if="{{checking}}" />
+<!-- 信息确认弹框 -->
+<view class="dialog" wx:if="{{checking}}">
+	<view class="warn">发票开具成功后不可撤销，请您仔细核对开票信息</view>
+	<view class="row">
+		<text class="key">抬头类型</text>
+		<text class="value">{{type==0?'企业单位':'个人'}}</text>
+	</view>
+	<view class="row">
+		<text class="key">发票抬头</text>
+		<text class="value">{{name}}</text>
+	</view>
+	<view class="row" wx:if="{{type==0}}">
+		<text class="key">纳税人识别号</text>
+		<text class="value">{{number}}</text>
+	</view>
+	<view class="row">
+		<text class="key">发票金额</text>
+		<text class="value">{{price}}</text>
+	</view>
+	<view class="row">
+		<text class="key">电子邮件</text>
+		<text class="value">{{email}}</text>
+	</view>
+	<view class="btn_container">
+		<view class="cancel" catchtap="onCancel">修改</view>
+		<view class="commit" catchtap="onCommit">确认</view>
+	</view>
+</view>

@@ -33,7 +33,14 @@
     "pages/categoryRank/index",
     "pages/price/index",
     "pages/recharge/recharge",
-    "pages/recharge_record/record"
+    "pages/recharge_record/record",
+    "pages/invoice_record/index",
+    "pages/invoice/index",
+    "pages/consum/index",
+    "pages/consum2/index",
+    "pages/settle/index",
+    "pages/register/index",
+    "pages/sign/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
