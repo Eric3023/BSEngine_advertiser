@@ -1,0 +1,37 @@
+<scroll-view class=".scroll">
+	<view class="container">
+		<view class="header center">
+			<image class="photo" src="/img/plateform/hongshu.png"></image>
+			<image class="edit" src="/img/icon/icon_edit.png"></image>
+			<image class="camera" src="/img/icon/icon_camera.png"></image>
+		</view>
+		<view class="sub_container">
+			<view class="param">
+				<text>用户名</text>
+				<text class="data">海子</text>
+			</view>
+			<view class="line"></view>
+		</view>
+		<view class="sub_container">
+			<view class="param">
+				<text>手机号</text>
+				<text class="data">13888888888</text>
+			</view>
+			<view class="line"></view>
+		</view>
+		<view class="sub_container">
+			<view class="param">
+				<text>生日</text>
+				<text class="data">1998-09-08</text>
+			</view>
+			<view class="line"></view>
+		</view>
+		<view class="sub_container">
+			<view class="param">
+				<text>所在城市</text>
+				<text class="data">北京</text>
+			</view>
+			<view class="line"></view>
+		</view>
+	</view>
+</scroll-view>

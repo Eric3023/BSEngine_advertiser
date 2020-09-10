@@ -40,7 +40,8 @@
     "pages/consum2/index",
     "pages/settle/index",
     "pages/register/index",
-    "pages/sign/index"
+    "pages/sign/index",
+    "pages/material/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
