@@ -1,0 +1,85 @@
+<scroll-view class="scroll" scroll-x="false" scroll-y="true">
+	<view class="container padding">
+		<view class="header" wx:if="{{type==1}}">审核未通过</view>
+		<view class="param">
+			<text class="title">平台</text>
+			<view class="platform">
+				<view class="item" wx:for="{{10}}" wx:key="index">
+					<image class="icon" wx:if="{{index!=9}}" src="/img/plateform/miaopai.png"></image>
+					<text class="add center" wx:if="{{index==9}}">+</text>
+				</view>
+			</view>
+		</view>
+		<view class="param">
+			<text class="title">活动主题</text>
+			<input class="subject"></input>
+		</view>
+		<view class="param">
+			<text class="title">活动描述</text>
+			<textarea class="desc"></textarea>
+		</view>
+		<view class="param">
+			<text class="title">活动时间</text>
+			<view class="time_container">
+				<picker class="center" mode="date" value="0" start='{{now}}'>
+					<view class="time">
+						<text>2020-09-11</text>
+						<image class="pull" src="/img/login/icon_pull.png"></image>
+					</view>
+				</picker>
+				<view class="line"></view>
+				<picker class="center" value="0" mode="date" start='{{now}}'>
+					<view class="time">
+						<text>2020-09-11</text>
+						<image class="pull" src="/img/login/icon_pull.png"></image>
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="param">
+			<text class="title">反馈截止时间</text>
+			<view class="time_container">
+				<picker class="center" mode="date" value="0" start='{{now}}'>
+					<view class="time">
+						<text>2020-09-11</text>
+						<image class="pull" src="/img/login/icon_pull.png"></image>
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="param">
+			<text class="title">活动标的分类</text>
+			<image class="enter" src="/img/mine/icon_mine_enter.png"></image>
+		</view>
+		<view class="param">
+			<text class="title">活动标的资质链接</text>
+			<input class="subject"></input>
+		</view>
+		<view class="param">
+			<text class="title">资质文件</text>
+			<view class="platform">
+				<view class="item" wx:for="{{5}}" wx:key="index">
+					<image class="dicon" wx:if="{{index!=4}}" src="/img/plateform/miaopai.png"></image>
+					<text class="dadd center" wx:if="{{index==4}}">+</text>
+				</view>
+			</view>
+		</view>
+		<view class="param">
+			<text class="title">健康度</text>
+			<view class="time_container">
+				<picker class="center" value="{{index}}" range="{{grade}}">
+					<view class="time">
+						<text>优</text>
+						<image class="pull" src="/img/login/icon_pull.png"></image>
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="param row" wx:if="{{type==0}}">
+			<text class="title">投放主播分类</text>
+			<image class="enter" src="/img/mine/icon_mine_enter.png"></image>
+		</view>
+		<text class="submit center" wx:if="{{type==0}}">提交审核(审核通过后付款)</text>
+		<text class="resubmit center" wx:if="{{type==1}}">重新提交</text>
+	</view>
+</scroll-view>

@@ -42,7 +42,7 @@
     "pages/register/index",
     "pages/sign/index",
     "pages/material/index",
-    "pages/exmain/index",
+    "pages/activity/index",
     "pages/informations/index",
     "pages/information/index"
   ],
@@ -72,7 +72,7 @@
         "selectedColor": "#f3864b"
       },
       {
-        "pagePath": "pages/media/index",
+        "pagePath": "pages/activity/index",
         "text": "活动",
         "iconPath": "img/tab/activity_normal.png",
         "selectedIconPath": "img/tab/activity_selected.png",

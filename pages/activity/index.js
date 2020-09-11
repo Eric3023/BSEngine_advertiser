@@ -1,11 +1,15 @@
-// pages/exmain/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    //0.提交中；1：审核失败
+    type: 0,
+    grade: [
+      "优",
+      "良"
+    ]
   },
 
   /**
