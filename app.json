@@ -41,7 +41,10 @@
     "pages/settle/index",
     "pages/register/index",
     "pages/sign/index",
-    "pages/material/index"
+    "pages/material/index",
+    "pages/exmain/index",
+    "pages/informations/index",
+    "pages/information/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

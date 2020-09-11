@@ -1,4 +1,4 @@
-<scroll-view class=".scroll" scroll-x="false" scroll-y="true">
+<scroll-view class="scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
 		<view class="header">
 			<text>活动选择</text>

@@ -1,0 +1,20 @@
+<scroll-view class="scroll" scroll-x="false" scroll-y="true">
+	<view class="container">
+		<block wx:for="{{10}}" wx:key="index">
+			<view class="item">
+				<image class="icon" src="/img/plateform/kuai.png"></image>
+				<view class="content">
+					<view class="header">
+						<text class="title">美囤商城</text>
+						<text class="time">2020-06-03</text>
+					</view>
+					<view class="header">
+						<text class="desc ell">美囤妈妈618宠粉节，正品好货等你来，正品好货等你来，正品好货等你来。</text>
+						<text class="num center">10</text>
+					</view>
+				</view>
+			</view>
+      <view class="line"></view>
+		</block>
+	</view>
+</scroll-view>

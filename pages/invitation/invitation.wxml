@@ -1,4 +1,4 @@
-<scroll-view class=".scroll" scroll-x="false" scroll-y="true">
+<scroll-view class="scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
 		<image class="header" src="/img/background/invitation.jpg"></image>
 		<view class="num_container">

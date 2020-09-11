@@ -1,0 +1,34 @@
+<view class="scroll">
+	<view class="container padding">
+		<view class="header">审核未通过</view>
+		<view class="param">
+			<text class="title">平台</text>
+		</view>
+		<view class="param">
+			<text class="title">活动主题</text>
+			<input class="subject"></input>
+		</view>
+		<view class="param">
+			<text class="title">活动描述</text>
+			<textarea class="desc"></textarea>
+		</view>
+		<view class="param">
+			<text class="title">活动时间</text>
+		</view>
+		<view class="param">
+			<text class="title">反馈截止时间</text>
+		</view>
+		<view class="param">
+			<text class="title">活动标的行业</text>
+		</view>
+		<view class="param">
+			<text class="title">活动标的资质链接</text>
+		</view>
+		<view class="param">
+			<text class="title">资质文件</text>
+		</view>
+		<view class="param">
+			<text class="title">健康度</text>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,17 @@
+<scroll-view class="scroll" scroll-x="false" scroll-y="true">
+	<view class="container">
+		<block wx:for="{{10}}" wx:key="index">
+			<view class="item">
+				<text class="time">2020-06-03 上午11:59</text>
+				<view class="body">
+					<image class="icon" src="/img/plateform/kuai.png"></image>
+					<view class="content">
+						<text class="desc">美囤妈妈618宠粉节，正品好物，妈妈安心！拼手速抢100-199神券！另有5元无门槛红包，每天10点、20点限量开抢！点击链接马上领券。</text>
+            <view class="line"></view>
+						<text class="num center">查看详情 ></text>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+</scroll-view>

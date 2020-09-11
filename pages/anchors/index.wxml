@@ -1,5 +1,5 @@
 <!-- 搜素 -->
-<scroll-view class=".scroll" scroll-x="false" scroll-y="true">
+<scroll-view class="scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
 		<search_view bind:search="onSearch" bind:menu="onMenu"/>
 		<view class="body">

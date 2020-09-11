@@ -1,4 +1,4 @@
-<scroll-view class=".scroll" scroll-x="false" scroll-y="true">
+<scroll-view class="scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
 		<!-- 订单简介 -->
 		<view class="header">

@@ -1,4 +1,4 @@
-<scroll-view class=".scroll">
+<scroll-view class="scroll">
 	<view class="container">
 		<view class="header center">
 			<image class="photo" src="/img/plateform/hongshu.png"></image>

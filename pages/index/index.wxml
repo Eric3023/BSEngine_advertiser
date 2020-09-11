@@ -2,7 +2,7 @@
 <!-- 首页搜素 -->
 <search_view bind:search="onSearch"  bind:menu="onMenu"/>
 
-<scroll-view class=".scroll" scroll-x="false" scroll-y="true">
+<scroll-view class="scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
 		<view class="header">
 			<!-- 首页轮播 -->
