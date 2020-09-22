@@ -7,7 +7,6 @@
     "pages/login/login",
     "pages/orders/index",
     "pages/feedback/feedback",
-    "pages/login/code/code",
     "pages/liveData/liveData",
     "pages/rob/rob",
     "pages/activityList/activityList",

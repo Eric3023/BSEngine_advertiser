@@ -15,6 +15,9 @@ module.exports = {
   //根据手机号登录
   AuthPhoneLoginByWeixin: WxApiRoot + 'auth/phone_login_by_weixin',
 
+  //首页Banner
+  Banner: WxApiRoot + 'index/banner',
+
   //手机验证码
   regCaptcha: BaseApi + '/wx/auth/regCaptcha',
   //手机号注册
@@ -26,10 +29,13 @@ module.exports = {
   //分享验证码
   shareUrl: BaseApi + '/wx/user/getSharedUrl',
 
+  //获取主播账号
+  mediaAccounts: BaseApi + '/api/mediaAccount/getListForAdvertisers',
+
+
+
   //图片根地址
   BaseImgApi: BaseApi,
-  //首页Banner
-  Banner: WxApiRoot + 'index/banner',
   //行业分类
   LocationCategory: WxApiRoot + 'index/allCategory',
   //周边用户数
