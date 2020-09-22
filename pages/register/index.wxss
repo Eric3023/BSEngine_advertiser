@@ -78,9 +78,9 @@ input {
 }
 
 .code {
-  width: 92rpx;
+  width: 96rpx;
   height: 42rpx;
-  background-color: #fdb564;
+  background-color: #fe8500;
   font-size: 28rpx;
   color: white;
   border-radius: 28rpx;

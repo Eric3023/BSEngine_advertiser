@@ -9,12 +9,12 @@ const api = require('../config/api.js');
  * Promise封装wx.checkSession
  */
 function checkSession() {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     wx.checkSession({
-      success: function() {
+      success: function () {
         resolve(true);
       },
-      fail: function() {
+      fail: function () {
         reject(false);
       }
     })
@@ -25,16 +25,16 @@ function checkSession() {
  * Promise封装wx.login
  */
 function login() {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     wx.login({
-      success: function(res) {
+      success: function (res) {
         if (res.code) {
           resolve(res);
         } else {
           reject(res);
         }
       },
-      fail: function(err) {
+      fail: function (err) {
         reject(err);
       }
     });
@@ -56,7 +56,7 @@ function loginByWeixin(that) {
       util.request(api.AuthLoginByWeixin, {
         code: res.code
       }, 'POST').then(res => {
-        
+
         if (res.errno === 0) {
           that.setData({
             sessionKey: res.data.sessionKey,
@@ -81,12 +81,13 @@ function loginByWeixin(that) {
 function wxLoginPhone(e, that) {
 
   let shareUserId = wx.getStorageSync('shareUserId');
-  if (!shareUserId || shareUserId =='undefined'){
+  if (!shareUserId || shareUserId == 'undefined') {
     shareUserId = 1;
   }
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     //登录远程服务器
     util.request(api.AuthPhoneLoginByWeixin, {
+      type: 1,
       sessionKey: that.data.sessionKey,
       openId: that.data.openId,
       iv: e.detail.iv,
@@ -114,7 +115,7 @@ function wxLoginPhone(e, that) {
  * 判断用户是否登录
  */
 function checkLogin() {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     if (wx.getStorageSync('userInfo') && wx.getStorageSync('token')) {
       checkSession().then(() => {
         resolve(true);

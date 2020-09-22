@@ -1,19 +1,14 @@
-<view class="container">
-	<!-- 手机号布局 -->
-	<view class="phone_container">
-		<text class="phone_tip1">请输入手机号</text>
-		<text class="phone_tip2">为方便取得联系，请输入您的常用手机号码</text>
-		<text class="phone_tip3">请输入手机号</text>
-		<view class="phone_tip4">
-			<view class="phone">
-				<view class="a86">
-					<text>+86</text>
-					<image class="pull" src="/img/login/icon_pull.png"></image>
-				</view>
-				<input class="phone_input" placeholder="输入手机号" focus="true" type="number" maxlength="11" bindinput="onInput" adjust-position="true"></input>
-			</view>
-			<view class="line"></view>
-		</view>
-		<button class="phone_btn" catchtap="onConfirm">下一步</button>
+<view class="column container">
+	<view class="param column">
+		<view class="title">手机号码</view>
+		<view class="line"></view>
+		<input placeholder="请输入手机号" placeholder-class="holder" type="number" model:value="{{phone}}"></input>
 	</view>
+	<view class="param column">
+		<view class="title">密码</view>
+		<view class="eline"></view>
+		<input placeholder="不含特殊字符的数字，字母组合" placeholder-class="holder" password="true" model:value="{{password}}"></input>
+	</view>
+	<text class="login center" catchtap="onLogin">登录</text>
+	<text class="register center" catchtap="onRegist">注册</text>
 </view>

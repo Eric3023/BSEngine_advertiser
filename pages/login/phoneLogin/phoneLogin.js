@@ -1,3 +1,5 @@
+const loginModel = require('../../../models/login.js')
+
 /**
  * 手机号登录页面
  */
@@ -8,6 +10,7 @@ Page({
    */
   data: {
     phone: "",
+    password: ''
   },
 
   /**
@@ -18,65 +21,73 @@ Page({
   },
 
   /**
-   * 监听输入
-   */
-  onInput(event) {
-    this.data.phone = event.detail.value;
-  },
-
-  /**
    * 手机号输入完成
    */
-  onConfirm(event) {
-    let value = this.data.phone;
-    this._checkPhone(value);
-  },
+  onLogin(event) {
+    var checkPhone = this._checkPhoneNum()
+    if (!checkPhone) return
 
-  /**
-   * 校验手机号是否合法 
-   */
-  _checkPhone(value) {
-    value = value.trim();
-    let warn = "";
-    if (!value) {
-      warn = "手机号不能为空";
-      this.data.phone = "";
-      this._showError(warn);
-    } else if (value.trim().length != 11
-      || ! /^(14[0-9]|13[0-9]|15[0-9]|17[0-9]|18[0-9])\d{8}$$/.test(value)) {
-      warn = "手机号格式不正确";
-      this.data.phone = "";
-      this._showError(warn);
-    } else {
-      this.data.phone = value;
-      this._sendCode();
-      this._changeLayout();
-    }
-  },
+    var checkPassword = this._checkPassword()
+    if (!checkPassword) return
 
-  /**
-   * 发送验证码
-   */
-  _sendCode() {
-
-  },
-
-  /**
-   * 验证码布局
-   */
-  _changeLayout() {
-      wx.navigateTo({
-        url: `/pages/login/code/code?phone=+86${this.data.phone}`,
+    loginModel.login({
+      username: this.data.phone,
+      password: this.data.password,
+    }).then(res => {
+      //存储用户信息
+      wx.setStorageSync('phone', res.data.userInfo.phone);
+      wx.setStorageSync('token', res.data.token);
+      wx.showToast({
+        title: '登录成功',
+        icon: 'none'
       })
+      setTimeout(_ => wx.reLaunch({
+        url: '../../../pages/index/index',
+      }), 1000)
+    }).catch(exp => {
+      wx.showToast({
+        title: '登录失败',
+        icon: 'none'
+      })
+    })
   },
 
   /**
-   * 错误提示
+   * 注册
    */
-  _showError(warn) {
-    wx.showToast({
-      title: warn,
-      icon: 'none'
+  onRegist: function () {
+    wx.navigateTo({
+      url: '../../register/index',
     })
-  }
+  },
+
+  /**
+   * 检查手机号
+   */
+  _checkPhoneNum() {
+    var check = loginModel.checkPhone(this.data.phone)
+    if (!check) {
+      wx.showToast({
+        title: '手机号格式不正确',
+        icon: 'none'
+      })
+      return false
+    }
+    return true
+  },
+
+  /**
+ * 检查手机号
+ */
+  _checkPassword() {
+    if (!this.data.password) {
+      wx.showToast({
+        title: '密码不能为空',
+        icon: 'none'
+      })
+      return false
+    }
+    return true
+  },
+
 })

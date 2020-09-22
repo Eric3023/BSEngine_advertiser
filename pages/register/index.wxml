@@ -2,23 +2,24 @@
 	<view class="param column">
 		<view class="title">手机号码</view>
 		<view class="line"></view>
-		<input placeholder="请输入手机号" placeholder-class="holder"></input>
+		<input placeholder="请输入手机号" placeholder-class="holder" type="number" model:value="{{phone}}"></input>
 	</view>
 	<view class="param column">
 		<view class="title">密码</view>
 		<view class="eline"></view>
-		<input placeholder="不含特殊字符的数字，字母组合" placeholder-class="holder"></input>
+		<input placeholder="不含特殊字符的数字，字母组合" placeholder-class="holder" password="true" model:value="{{password}}"></input>
 	</view>
 	<view class="param column">
 		<view class="title">确认密码</view>
 		<view class="line"></view>
-		<input placeholder="不含特殊字符的数字，字母组合" placeholder-class="holder"></input>
+		<input placeholder="不含特殊字符的数字，字母组合" placeholder-class="holder" password="true" model:value="{{checkPassword}}" bindblur="onCheckPassword"></input>
 	</view>
 	<view class="mparam row">
 		<view class="title">验证码</view>
 		<view class="mline"></view>
-		<input class="minput" placeholder="请输入验证阿妈" placeholder-class="holder"></input>
-		<view class="code center">获取</view>
+		<input class="minput" placeholder="请输入验证码" placeholder-class="holder" model:value="{{code}}"></input>
+		<view class="code center" wx:if="{{!timeShow}}" catchtap="onSendMessage">获取</view>
+		<view class="code center" wx:if="{{timeShow}}">{{time}}s</view>
 	</view>
-	<text class="btn center">注册</text>
+	<text class="btn center" catchtap="onRegist">注册</text>
 </view>

@@ -1,66 +1,137 @@
-// pages/password/password.js
+const loginModel = require('../../models/login.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    phone: '',
+    password: '',
+    checkPassword: '',
+    code: '',
 
+    time: 0,
+    timeShow: false,
+    timePeriod: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this._getPhone()
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 检查密码
    */
-  onReady: function () {
-
+  onCheckPassword: function (event) {
+    this._checkPassword()
   },
 
   /**
-   * 生命周期函数--监听页面显示
+   * 获取验证码
    */
-  onShow: function () {
+  onSendMessage: function () {
+    var check = loginModel.checkPhone(this.data.phone)
+    if (!check) {
+      wx.showToast({
+        title: '未获取到手机号，请重新登录',
+        icon: 'none'
+      })
+      return
+    }
 
+    loginModel.regCaptcha(this.data.phone).then(res => {
+      this.setData({
+        time: 60,
+        timeShow: true
+      })
+
+      this.data.timePeriod = setInterval(this._changeTime, 1000)
+    }).catch(exp => {
+      console.log(exp);
+
+      wx.showToast({
+        title: '验证码获取失败',
+        icon: 'none'
+      })
+    })
   },
 
   /**
-   * 生命周期函数--监听页面隐藏
+   * 提交
    */
-  onHide: function () {
-
+  onSubmit: function () {
+    var check = this._checkPassword()
+    if (!check) return
+    loginModel.changePassword({
+      mobile: this.data.phone,
+      password: this.data.password,
+      code: this.data.code
+    }).then(res => {
+      wx.showToast({
+        title: '密码修改成功',
+        icon: 'none'
+      })
+      setTimeout(_ => wx.navigateBack(), 1000)
+    }).catch(exp => {
+      wx.showToast({
+        title: '密码修改失败',
+        icon: 'none'
+      })
+    })
   },
 
   /**
-   * 生命周期函数--监听页面卸载
+   * 获取手机号
    */
-  onUnload: function () {
-
+  _getPhone: function () {
+    this.setData({
+      phone: wx.getStorageSync('phone')
+    })
   },
 
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
+   * 修改倒计时
    */
-  onPullDownRefresh: function () {
-
+  _changeTime: function () {
+    this.data.time--
+    if (this.data.time === 0) {
+      clearInterval(this.data.timePeriod)
+      this.setData({
+        time: this.data.time,
+        timeShow: false
+      })
+    } else {
+      this.setData({
+        time: this.data.time
+      })
+    }
   },
 
   /**
-   * 页面上拉触底事件的处理函数
+   * 检查两次输入密码是否相同
    */
-  onReachBottom: function () {
+  _checkPassword: function () {
+    if (!this.data.checkPassword || !this.data.password) {
+      wx.showToast({
+        title: '请输入密码',
+        icon: 'none'
+      })
+      return false
+    }
 
+    if (this.data.checkPassword === this.data.password) {
+      return true
+    }
+
+    wx.showToast({
+      title: '两次密码输入不一致',
+      icon: 'none'
+    })
+    return false
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
