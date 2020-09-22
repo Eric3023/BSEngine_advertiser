@@ -3,9 +3,9 @@
 	<view class="container">
 		<search_view bind:search="onSearch" />
 		<view class="body">
-			<text class="disactive center" data-category="{{-1}}" catchtap="onClickItem">不限行业</text>
+			<text class="{{position==-1? 'active':'disactive'}} center" data-index="{{-1}}" catchtap="onClickItem">不限行业</text>
 			<view class="list">
-				<text class="{{index==1? 'active':'disactive'}} center" wx:for="{{10}}"  wx:key="index" data-category="{{index}}" catchtap="onClickItem">分类{{index}}</text>
+				<text wx:for="{{list}}"  wx:key="index" class="{{position==index? 'active':'disactive'}} center"  data-index="{{index}}" catchtap="onClickItem">{{item.name}}</text>
 			</view>
 		</view>
 	</view>

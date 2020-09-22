@@ -10,17 +10,17 @@
 	</view>
 	<view class="body" hidden="{{!show}}">
 		<!-- 历史搜素 -->
-		<view class="child">
+		<view class="child" wx:if="{{history&&history.length!=0}}">
 			<view class="header">
 				<text class="title">历史搜索</text>
-				<image class="clearIcon" src="/img/icon/icon_clear.png" catchtap="onDeleteHistory"></image>
+				<image class="clearIcon" src="/img/icon/icon_clear.png" catchtap="onClearHistory"></image>
 			</view>
 			<view class="list">
 				<view class="item" wx:for="{{history}}" wx:key="index" catchtap="onHistoryClick" data-value="{{item}}">{{item}}</view>
 			</view>
 		</view>
 		<!-- 热门搜索 -->
-		<view class="child">
+		<view class="child" wx:if="{{hot&&hot.length!=0}}">
 			<text class="title">热门搜索</text>
 			<view class="list">
 				<view class="item" wx:for="{{hot}}" wx:key="index" catchtap="onHotClick" data-value="{{item}}">{{item}}</view>

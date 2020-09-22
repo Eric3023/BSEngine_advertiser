@@ -9,8 +9,9 @@
 
 .photo {
   width: 250rpx;
-  height: 305rpx;
-  background-color: yellowgreen;
+  height: 250rpx;
+  margin: 25rpx 0;
+  border-radius: 10rpx;
 }
 
 .info {

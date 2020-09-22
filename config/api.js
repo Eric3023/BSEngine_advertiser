@@ -31,6 +31,8 @@ module.exports = {
 
   //获取主播账号
   mediaAccounts: BaseApi + '/api/mediaAccount/getListForAdvertisers',
+  //获取账号类型
+  liveType: BaseApi + '/api/mediaAccount/getLiveTypes',
 
 
 

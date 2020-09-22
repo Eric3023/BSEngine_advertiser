@@ -1,11 +1,12 @@
 <!-- 搜素 -->
 <scroll-view class="scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
-		<search_view bind:search="onSearch" bind:menu="onMenu"/>
+		<search_view bind:search="onSearch" bind:menu="onMenu" />
 		<view class="body">
-			<block wx:for="{{10}}" wx:key="index">
-				<anchor type="{{1}}" imgurl="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1306508493,2006189766&fm=26&gp=0.jpg" name="清水河畔" desc="那年清水河畔，回眸一笑，呜呜呜呜呜呜" star="{{23}}" follow="{{89642}}" like="{{9.1}}" />
-			</block>
+			<view wx:for="{{list}}" wx:key="index" catchtap="onClickItem" data-item="{{item}}">
+				<anchor type="{{0}}" imgurl="{{item.headImg}}" name="{{item.accountName}}" desc="{{item.accountDesc}}" star="{{item.fansNum}}" follow="{{item.followNum}}" like="{{item.liked}}" />
+			</view>
+			<empty show="{{!(list&&list.length!=0)&&!lock}}" message="搜索结果为空~~~" />
 		</view>
 	</view>
 </scroll-view>

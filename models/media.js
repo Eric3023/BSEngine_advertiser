@@ -5,20 +5,30 @@ const check = require('../models/check.js');
 /**
  * 获取媒体账号
  */
-function getMediaAccounts({ liveType, media, name, maxPrice, minPrice, maxFans, minFans, page, size }) {
-  return check.checkResult(util.request(config.mediaAccounts, {
-    liveType: liveType,
-    media: media,
-    name: name,
-    maxFans: maxFans,
-    minFans: minFans,
-    maxPrice: maxPrice,
-    minPrice: minPrice,
-    page: page,
-    size: size,
-  }));
+function getMediaAccounts(data) {
+  // return check.checkResult(util.request(config.mediaAccounts, {
+  //   liveType: liveType,
+  //   media: media,
+  //   name: name,
+  //   maxFans: maxFans,
+  //   minFans: minFans,
+  //   maxPrice: maxPrice,
+  //   minPrice: minPrice,
+  //   page: page,
+  //   size: size,
+  // }));
+
+  return check.checkResult(util.request(config.mediaAccounts, data));
+}
+
+/**
+ * 获取账号类型
+ */
+function getLiveTypes() {
+  return check.checkResult(util.request(config.liveType));
 }
 
 module.exports = {
   getMediaAccounts: getMediaAccounts,
+  getLiveTypes: getLiveTypes,
 }

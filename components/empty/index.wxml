@@ -1,0 +1,3 @@
+<view class="empty" wx:if="{{show}}">
+	<text>{{message}}</text>
+</view>

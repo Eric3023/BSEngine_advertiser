@@ -49,8 +49,8 @@ Component({
     /**
      * 清空历史记录
      */
-    onDeleteHistory: function (event) {
-
+    onClearHistory: function (event) {
+      this.triggerEvent("onClearHistory");
     },
 
     /**
