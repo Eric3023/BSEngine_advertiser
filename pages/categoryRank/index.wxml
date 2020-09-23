@@ -1,3 +1,4 @@
+<wxs src="../../utils/format.wxs" module="format" />
 <!-- 搜素 -->
 <scroll-view class="scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
@@ -9,7 +10,7 @@
 					<text class="title">平台分类</text>
 				</view>
 				<view class="sub_container">
-					<text>不限</text>
+					<text>{{media.name? media.name:'不限'}}</text>
 					<image class="icon" src="/img/icon/icon_enter.png" />
 				</view>
 			</view>
@@ -19,7 +20,7 @@
 					<text class="title">常见分类</text>
 				</view>
 				<view class="sub_container">
-					<text>不限</text>
+					<text>{{industry.name? industry.name:'不限'}}</text>
 					<image class="icon" src="/img/icon/icon_enter.png" />
 				</view>
 			</view>
@@ -29,7 +30,7 @@
 					<text class="title">粉丝数</text>
 				</view>
 				<view class="sub_container">
-					<text>不限</text>
+					<text>{{fans.min!=undefied? format.hexFormat(fans.min)+(fans.max? '-'+format.hexFormat(fans.max):'以上'):'不限'}}</text>
 					<image class="icon" src="/img/icon/icon_enter.png" />
 				</view>
 			</view>
@@ -39,7 +40,7 @@
 					<text class="title">价格</text>
 				</view>
 				<view class="sub_container">
-					<text>不限</text>
+					<text>{{price.min? format.hexFormat(price.min)+(price.max? '-'+format.hexFormat(price.max):'以上'):'不限'}}</text>
 					<image class="icon" src="/img/icon/icon_enter.png" />
 				</view>
 			</view>
@@ -53,6 +54,8 @@
 					<image class="icon" src="/img/icon/icon_enter.png" />
 				</view>
 			</view>
+			<!-- 确认按钮 -->
+			<button class="btn center" catchtap="onSubmit">查询</button>
 		</view>
 	</view>
 </scroll-view>

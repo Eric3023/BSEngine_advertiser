@@ -4,7 +4,7 @@
 		<text class="name">{{name}}</text>
 		<text class="desc">签名：{{desc}}</text>
 		<!-- 搜索 -->
-		<view class="type" hidden="{{type!=0}}">
+		<view class="type" hidden="{{true}}">
 			<view class="contact margin_top">
 				<text class="star">{{follow}}关注</text>
 				<text class="follow">{{fans}}粉丝</text>
@@ -12,7 +12,7 @@
 			<text class="margin_top">{{like}}赞</text>
 		</view>
 		<!-- 分类 -->
-		<view class="type" hidden="{{type!=1}}">
+		<view class="type" hidden="{{false}}">
 			<view class="contact margin_top">
 				<text class="star">{{follow}}关注</text>
 				<text class="follow">{{fans}}粉丝</text>
@@ -21,7 +21,7 @@
 			<text class="margin_top flag">商业价值高</text>
 		</view>
 		<!-- 榜单 -->
-		<view class="type" hidden="{{type!=2}}">
+		<view class="type" hidden="{{true}}">
 			<view class="contact margin_top">
 				<text class="star">接单数{{orders}}</text>
 				<text class="follow">健康度{{grade}}</text>

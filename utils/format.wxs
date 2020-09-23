@@ -6,7 +6,7 @@ var numberFormat = function (number, count) {
 }
 
 var hexFormat = function (number) {
-  if (number > 1000)
+  if (number > 10000)
     return numberFormat(number / 10000, 1) + '万';
   else
     return number;

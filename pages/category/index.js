@@ -7,13 +7,13 @@ Page({
    */
   data: {
     list: [],
-    position: -1,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this._initId(options)
     this._getLiveTypes()
   },
 
@@ -21,25 +21,21 @@ Page({
    * 点击Item
    */
   onClickItem: function (event) {
-    let index = event.currentTarget.dataset.index;
-    if (index >= 0 && index < this.data.list.length) {
-      this.setData({
-        position: index
-      })
-
-      let item = this.data.list[index]
-      wx.navigateTo({
-        url: `/pages/anchors/index?liveType=${item.id}`,
-      })
-    } else {
-      this.setData({
-        position: -1
-      })
-
-      wx.navigateTo({
-        url: `/pages/anchors/index`,
-      })
+    let item = event.currentTarget.dataset.item;
+    if (!item) {
+      item = {}
     }
+
+    this.setData({
+      data: item
+    })
+
+    const pages = getCurrentPages()
+    const prevPage = pages[pages.length - 2]
+    prevPage.setData({
+      industry: item
+    })
+    wx.navigateBack()
   },
 
   /**
@@ -48,6 +44,19 @@ Page({
   onSearch(event) {
     wx.navigateTo({
       url: '/pages/search/search',
+    })
+  },
+
+  /**
+   * 初始化Id
+   */
+  _initId: function (options) {
+    let industryId = options.industryId
+    this.data.data = {
+      id: industryId
+    }
+    this.setData({
+      data: this.data.data
     })
   },
 

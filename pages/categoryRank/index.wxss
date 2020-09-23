@@ -29,6 +29,9 @@
   flex-direction: row;
   color: #969696;
   font-size: 26rpx;
+  position: absolute;
+  top: 40rpx;
+  right: 0;
 }
 
 .title {
@@ -41,7 +44,7 @@
   margin-left: 4rpx;
 }
 
-.background{
+.background {
   width: 600rpx;
   height: 100%;
   display: flex;
@@ -68,4 +71,15 @@
 
 .audience {
   background: linear-gradient(to right, #26b6b3, #ffffff);
+}
+
+.btn {
+  height: 90rpx;
+  width: 680rpx;
+  background-color: #f88a3e;
+  color: white;
+  font-size: 32rpx;
+  border-radius: 20rpx;
+  display: flex;
+  margin-top: 80rpx;
 }

@@ -22,6 +22,13 @@ function getMediaAccounts(data) {
 }
 
 /**
+ * 获取平台类型
+ */
+function getMediaTypes() {
+  return check.checkResult(util.request(config.mediaType));
+}
+
+/**
  * 获取账号类型
  */
 function getLiveTypes() {
@@ -30,5 +37,6 @@ function getLiveTypes() {
 
 module.exports = {
   getMediaAccounts: getMediaAccounts,
+  getMediaTypes: getMediaTypes,
   getLiveTypes: getLiveTypes,
 }

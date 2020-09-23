@@ -1,5 +1,5 @@
 <view class="container">
-	<view class="item" wx:for="{{plateforms}}" wx:key="index" data-id="{{item.id}}" catchtap="onClickItem">
+	<view class="item" wx:for="{{plateforms}}" wx:key="index" data-item="{{item}}" catchtap="onClickItem">
 		<image class="icon" src="{{item.icon}}"></image>
 		<text class="name">{{item.name}}</text>	
 	</view>

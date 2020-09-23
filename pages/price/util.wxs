@@ -1,0 +1,23 @@
+var getTitle = function (item) {
+
+  if (item.min == undefined) {
+    return '不限'
+  }
+
+  if (item.max == undefined) {
+    return hexFormat(item.min) + '以上'
+  }
+
+  return hexFormat(item.min) + '-' + item.max
+}
+
+var hexFormat = function (number) {
+  if (number > 10000)
+    return parseInt(number / 10000) + '万';
+  else
+    return number;
+}
+
+module.exports = {
+  getTitle: getTitle,
+}

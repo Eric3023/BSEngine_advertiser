@@ -1,3 +1,5 @@
+const mediaModel = require('../../models/media.js');
+
 Page({
 
   /**

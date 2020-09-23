@@ -21,6 +21,7 @@
 .item .icon {
   width: 102rpx;
   height: 102rpx;
+  border-radius: 10rpx;
 }
 
 .item .name {

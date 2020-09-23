@@ -18,7 +18,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.data.liveType = options.liveType
+    this.data.mediaId = options.mediaId
+    this.data.industryID = options.industryID
+    this.data.priceMin = options.priceMin
+    this.data.priceMax = options.priceMax
+    this.data.fansMax = options.fansMax
+    this.data.fansMin = options.fansMin
 
     this._getMedias()
   },
@@ -96,8 +101,23 @@ Page({
       size: this.data.size,
     }
 
-    if (this.data.liveType != undefined) {
-      param.liveType = this.data.liveType
+    if (this.data.mediaId != undefined) {
+      param.media = this.data.mediaId
+    }
+    if (this.data.industryID != undefined) {
+      param.liveType = this.data.industryID
+    }
+    if (this.data.priceMin != undefined) {
+      param.minPrice = this.data.priceMin
+    }
+    if (this.data.priceMax != undefined) {
+      param.maxPrice = this.data.priceMax
+    }
+    if (this.data.fansMax != undefined) {
+      param.minFans = this.data.fansMin
+    }
+    if (this.data.fansMin != undefined) {
+      param.maxFans = this.data.fansMax
     }
 
     wx.showLoading()
