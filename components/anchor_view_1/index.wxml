@@ -6,18 +6,18 @@
 		<!-- 搜索 -->
 		<view class="type" hidden="{{type!=0}}">
 			<view class="contact margin_top">
-				<text class="star">{{star}}关注</text>
-				<text class="follow">{{follow}}粉丝</text>
+				<text class="star">{{follow}}关注</text>
+				<text class="follow">{{fans}}粉丝</text>
 			</view>
-			<text class="margin_top">{{like}}万赞</text>
+			<text class="margin_top">{{like}}赞</text>
 		</view>
 		<!-- 分类 -->
 		<view class="type" hidden="{{type!=1}}">
 			<view class="contact margin_top">
-				<text class="star">{{star}}关注</text>
-				<text class="follow">{{follow}}粉丝</text>
+				<text class="star">{{follow}}关注</text>
+				<text class="follow">{{fans}}粉丝</text>
 			</view>
-			<text class="margin_top">{{like}}万赞</text>
+			<text class="margin_top">{{like}}赞</text>
 			<text class="margin_top flag">商业价值高</text>
 		</view>
 		<!-- 榜单 -->

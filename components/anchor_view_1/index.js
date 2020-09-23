@@ -7,11 +7,11 @@ Component({
     imgurl: String,
     name: String,
     desc: String,
-    star: Number,
-    follow: Number,
-    like: Number,
-    orders: Number,
-    grade: Number,
+    fans: String,//粉丝
+    follow: String,//关注
+    like: String,//点赞
+    orders: String,//接单数
+    grade: String,//健康度
     //0：搜索结果；1：分类；2：营销榜
     type: Number,
   },

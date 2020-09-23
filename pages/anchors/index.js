@@ -100,6 +100,7 @@ Page({
       param.liveType = this.data.liveType
     }
 
+    wx.showLoading()
     mediaModel.getMediaAccounts(param).then(
       res => {
         console.log(res);

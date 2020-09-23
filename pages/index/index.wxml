@@ -1,6 +1,6 @@
-<!--index.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
 <!-- 首页搜素 -->
-<search_view bind:search="onSearch"  bind:menu="onMenu"/>
+<search_view bind:search="onSearch" bind:menu="onMenu" />
 
 <scroll-view class="scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
@@ -20,12 +20,13 @@
 		<!-- 平台海报 -->
 		<view class="case-list">
 			<view class="body">
-				<view class="body_left">
-					<v_anchor class="item" wx:for="{{leftAnchors}}" wx:key="index" imgurl="{{item.img}}" />
+				<v_anchor class="item" wx:for="{{list}}" wx:key="index" imgurl="{{item.headImg}}" name="{{item.accountName}}" fans="{{format.hexFormat(item.fansNum)}}" price="{{item.price}}" />
+				<!-- <view class="body_left">
+					<v_anchor class="item" wx:for="{{list}}" wx:key="index" imgurl="{{item.headImg}}" name="{{item.accountName}}" fans="{{format.hexFormat(item.fansNum)}}" price="{{item.price}}" />
 				</view>
 				<view class="body_right">
-					<v_anchor class="item" wx:for="{{rightAnchors}}" wx:key="index" imgurl="{{item.img}}" />
-				</view>
+					<v_anchor class="item" wx:for="{{list}}" wx:key="index" imgurl="{{item.headImg}}" name="{{item.accountName}}" fans="{{format.hexFormat(item.fansNum)}}" price="{{item.price}}" />
+				</view> -->
 			</view>
 		</view>
 	</view>

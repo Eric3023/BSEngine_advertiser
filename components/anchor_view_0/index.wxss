@@ -52,7 +52,7 @@
   align-items: flex-start;
 }
 
-.section_down text {
+.section_down .text {
   color: #484848;
   white-space: nowrap;
   margin: 4rpx 8rpx;

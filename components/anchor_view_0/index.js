@@ -4,7 +4,15 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    imgurl: String
+    imgurl: String,
+    name: String,
+    desc: String,
+    fans: String,//粉丝
+    follow: String,//关注
+    like: String,//点赞
+    orders: Number,
+
+    price:Number,
   },
 
   /**

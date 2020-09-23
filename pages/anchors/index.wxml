@@ -1,12 +1,13 @@
+<wxs src="../../utils/format.wxs" module="format" />
 <!-- 搜素 -->
 <scroll-view class="scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
 		<search_view bind:search="onSearch" bind:menu="onMenu" />
 		<view class="body">
 			<view wx:for="{{list}}" wx:key="index" catchtap="onClickItem" data-item="{{item}}">
-				<anchor type="{{0}}" imgurl="{{item.headImg}}" name="{{item.accountName}}" desc="{{item.accountDesc}}" star="{{item.fansNum}}" follow="{{item.followNum}}" like="{{item.liked}}" />
+				<anchor type="{{1}}" imgurl="{{item.headImg}}" name="{{item.accountName}}" desc="{{item.accountDesc}}" fans="{{format.hexFormat(item.fansNum)}}" follow="{{format.hexFormat(item.followNum)}}" like="{{format.hexFormat(item.liked)}}" />
 			</view>
-			<empty show="{{!(list&&list.length!=0)&&!lock}}" message="搜索结果为空~~~" />
+			<empty show="{{!(list&&list.length!=0)&&!lock}}" message="数据列表为空~~~" />
 		</view>
 	</view>
 </scroll-view>

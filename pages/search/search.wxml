@@ -1,3 +1,5 @@
+<wxs src="../../utils/format.wxs" module="format" />
+
 <scroll-view class="scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
 		<!-- 搜索组件 -->
@@ -7,7 +9,7 @@
 		<!-- <image class="title" hidden="{{show}}" src="/img/icon/icon_search_list.jpg" /> -->
 		<view class="body" hidden="{{show}}">
 			<view wx:for="{{list}}" wx:key="index" catchtap="onClickItem" data-item="{{item}}">
-				<anchor type="{{0}}" imgurl="{{item.headImg}}" name="{{item.accountName}}" desc="{{item.accountDesc}}" star="{{item.fansNum}}" follow="{{item.followNum}}" like="{{item.liked}}" />
+				<anchor type="{{0}}" imgurl="{{item.headImg}}" name="{{item.accountName}}" desc="{{item.accountDesc}}" fans="{{format.hexFormat(item.fansNum)}}" follow="{{format.hexFormat(item.followNum)}}" like="{{format.hexFormat(item.liked)}}" />
 			</view>
 			<empty show="{{!(list&&list.length!=0)&&!lock}}" message="搜索结果为空~~~" />
 		</view>
