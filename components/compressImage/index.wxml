@@ -1,0 +1,2 @@
+<!-- 压缩画布 -->
+<canvas class="compress" canvas-id="canvas" style="width:{{cWidth}}px;height:{{cHeight}}px;"></canvas>

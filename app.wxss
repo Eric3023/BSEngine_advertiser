@@ -9,7 +9,7 @@ page {
 
 .scroll {
   width: 100%;
-  height: 99.9%;
+  /* height: 99.9%; */
 }
 
 scroll-view ::-webkit-scrollbar {
@@ -30,7 +30,7 @@ button::after {
   border: none;
 }
 
-.center{
+.center {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -51,6 +51,18 @@ button::after {
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+.button {
+  width: 652rpx;
+  height: 80rpx;
+  background-color: #fd8400;
+  margin: 100rpx 48rpx 40rpx 48rpx;
+  color: white;
+  box-sizing: border-box;
+  font-size: 36rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
 }
 
 /* 根布局 */

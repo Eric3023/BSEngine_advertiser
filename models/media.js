@@ -8,6 +8,7 @@ const check = require('../models/check.js');
 function getMediaAccounts(data) {
   // return check.checkResult(util.request(config.mediaAccounts, {
   //   liveType: liveType,
+  //   isLive: isLive,
   //   media: media,
   //   name: name,
   //   maxFans: maxFans,

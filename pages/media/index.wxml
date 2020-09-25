@@ -4,7 +4,7 @@
 		<search_view bind:search="onSearch" bind:menu="onMenu" />
 		<view class="body">
 			<view class="list">
-				<view class="item" wx:for="{{plateforms}}" wx:key="index" data-category="{{index}}" catchtap="onClickItem">
+				<view class="item" wx:for="{{plateforms}}" wx:key="index" data-index="{{index}}" catchtap="onClickItem">
 					<image class="background" src="{{item.icon}}"></image>
 					<text class="name">{{item.name}}</text>
 				</view>

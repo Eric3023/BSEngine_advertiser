@@ -32,7 +32,7 @@
 
 				</radio-group>
 
-				<button class="button-payment {{hiddenAccount?'show-block':'hidden'}}" form-type='submit'>立即支付</button>
+				<button class="button {{hiddenAccount?'show-block':'hidden'}}" form-type='submit'>立即支付</button>
 
 				<view class="account-info {{hiddenAccount?'hidden':'show-flex'}}">
 					<text class="account-text">说明：线下汇款到以下账户后，请联系我们的客服人员，我们将在收到汇款后的1个工作日，将汇款充值到该账户。客服电话：15801408659</text>

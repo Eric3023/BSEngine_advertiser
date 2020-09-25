@@ -43,10 +43,12 @@ Page({
    * Item点击监听
    */
   onClickItem: function (event) {
-    let id = event.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '/pages/rank/index',
-    })
+    let index = event.currentTarget.dataset.index
+    if (index == 0) {
+      wx.navigateTo({
+        url: '/pages/rank/index?isLive=0',
+      })
+    }
   },
 
   /**

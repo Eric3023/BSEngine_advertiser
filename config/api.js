@@ -36,22 +36,15 @@ module.exports = {
   //获取账号类型
   liveType: BaseApi + '/api/mediaAccount/getLiveTypes',
 
+  //添加活动
+  addActivity: BaseApi + '/api/activity/addActivity',
+  //活动播报类型
+  broadcastType: BaseApi + '/api/mediaAccount/getBroadcastTypes',
+
 
 
   //图片根地址
   BaseImgApi: BaseApi,
-  //行业分类
-  LocationCategory: WxApiRoot + 'index/allCategory',
-  //周边用户数
-  AroundUsers: WxApiRoot + 'index/userNums',
-  //获取投放广告位
-  AdPlaces: WxApiRoot + 'advertising/getAdPlaces',
-  //车型列表
-  CarTypes: WxApiRoot + 'advertising/getCarTypes',
-  //投放模板
-  Templates: WxApiRoot + 'advertising/getTemplates',
-  //投放
-  DoAdvertising: WxApiRoot + 'advertising/doAdvertising',
   //上传图片接口
   Upload: WxApiRoot + 'storage/upload',
   //充值记录接口

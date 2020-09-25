@@ -20,5 +20,5 @@
 		<text>应付金额</text>
 		<text class="settle">￥2000.00</text>
 	</view>
-	<text class="btn center">立即支付</text>
+	<text class="button center">立即支付</text>
 </view>

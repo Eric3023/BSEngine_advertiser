@@ -4,33 +4,80 @@
 		<view class="param">
 			<text class="title">平台</text>
 			<view class="platform">
-				<view class="item" wx:for="{{10}}" wx:key="index">
-					<image class="icon" wx:if="{{index!=9}}" src="/img/plateform/miaopai.png"></image>
-					<text class="add center" wx:if="{{index==9}}">+</text>
+				<!-- <view class="item" wx:for="{{medias}}" wx:key="index">
+					<image class="icon" wx:if="{{index!=medias.length-1}}" src="/img/plateform/miaopai.png"></image>
+					<text class="add center" wx:if="{{index==medias.length-1}}" catchtap="onSelectMedia">+</text>
+				</view> -->
+
+				<view class="item">
+					<image class="icon" wx:if="{{media}}" src="{{media.icon}}"></image>
+					<text class="add center" wx:if="{{!media}}" catchtap="onSelectMedia">+</text>
 				</view>
 			</view>
 		</view>
 		<view class="param">
 			<text class="title">活动主题</text>
-			<input class="subject"></input>
+			<input class="subject" model:value="{{name}}"></input>
+		</view>
+		<view class="param">
+			<text class="title">活动图片</text>
+			<view class="platform">
+				<view class="item" wx:for="{{images}}" wx:key="index" catchtap="onPreviewImage" catchlongtap="onDeleteImage" data-index="{{index}}">
+					<image class="dicon" src="{{item}}"></image>
+				</view>
+				<view class="item" catchtap="onUpdateImage">
+					<text class="dadd center">+</text>
+				</view>
+			</view>
+		</view>
+		<view class="param">
+			<text class="title">播报类型、数量</text>
+			<view class="time_container">
+				<picker class="picker" mode="multiSelector" model:value="{{broadcastIndex}}" range="{{multiBroadcast}}" range-key="name" start='{{endTime?endTime:now}}' bindchange="onBroadcastTypeChanged">
+					<view class="picker_container">
+						<text class="margin">{{multiBroadcast[0][broadcastIndex[0]].name}}　{{multiBroadcast[1][broadcastIndex[1]].name}}次</text>
+						<image class="pull_second" src="/img/login/icon_pull.png"></image>
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="param">
+			<text class="title">活动广告链接</text>
+			<input class="subject" model:value="{{adUrl}}"></input>
 		</view>
 		<view class="param">
 			<text class="title">活动描述</text>
-			<textarea class="desc"></textarea>
+			<textarea class="desc" model:value="{{desc}}"></textarea>
+		</view>
+		<view class="param">
+			<text class="title">订单量</text>
+			<input class="order" model:value="{{orderNum}}" type="digist" bindinput="onOrderChanged" maxlength="{{maxOrderLength}}" placeholder="请输入订单数量"></input>
+		</view>
+		<view class="param">
+			<view class="row">
+				<view class="column">
+					<text class="title">单价</text>
+					<input class="order" model:value="{{unitPrice}}" type="number" bindinput="onPriceChanged" maxlength="{{maxPriceLength}}" placeholder="请输入单价"></input>
+				</view>
+				<view class="column">
+					<text class="title">总价</text>
+					<text class="price">{{totalPrice? totalPrice:0}}元</text>
+				</view>
+			</view>
 		</view>
 		<view class="param">
 			<text class="title">活动时间</text>
 			<view class="time_container">
-				<picker class="center" mode="date" value="0" start='{{now}}'>
+				<picker class="center" mode="date" model:value="{{startTime}}" start='{{now}}'>
 					<view class="time">
-						<text>2020-09-11</text>
+						<text class="margin">{{startTime? startTime:now}}</text>
 						<image class="pull" src="/img/login/icon_pull.png"></image>
 					</view>
 				</picker>
 				<view class="line"></view>
-				<picker class="center" value="0" mode="date" start='{{now}}'>
+				<picker class="center" value="0" mode="date" model:value="{{endTime}}" start='{{startTime?startTime:now}}'>
 					<view class="time">
-						<text>2020-09-11</text>
+						<text class="margin">{{endTime?endTime:(startTime?startTime:now)}}</text>
 						<image class="pull" src="/img/login/icon_pull.png"></image>
 					</view>
 				</picker>
@@ -39,47 +86,52 @@
 		<view class="param">
 			<text class="title">反馈截止时间</text>
 			<view class="time_container">
-				<picker class="center" mode="date" value="0" start='{{now}}'>
+				<picker class="center" mode="date" model:value="{{feedbackTime}}" start='{{endTime?endTime:now}}'>
 					<view class="time">
-						<text>2020-09-11</text>
+						<text class="margin">{{feedbackTime? feedbackTime:(endTime?endTime:(startTime?startTime:now))}}</text>
 						<image class="pull" src="/img/login/icon_pull.png"></image>
 					</view>
 				</picker>
 			</view>
 		</view>
-		<view class="param">
+		<view class="param" catchtap="onSelectCategory">
 			<text class="title">活动标的分类</text>
-			<image class="enter" src="/img/mine/icon_mine_enter.png"></image>
+			<view class="row subject border">
+				<text class="title">{{industry.name? industry.name:'不限行业'}}</text>
+				<image class="enter" src="/img/mine/icon_mine_enter.png"></image>
+			</view>
 		</view>
 		<view class="param">
 			<text class="title">活动标的资质链接</text>
-			<input class="subject"></input>
+			<input class="subject" model:value="{{link}}"></input>
 		</view>
 		<view class="param">
 			<text class="title">资质文件</text>
 			<view class="platform">
-				<view class="item" wx:for="{{5}}" wx:key="index">
-					<image class="dicon" wx:if="{{index!=4}}" src="/img/plateform/miaopai.png"></image>
-					<text class="dadd center" wx:if="{{index==4}}">+</text>
+				<view class="item" wx:for="{{files}}" wx:key="index" catchtap="onPreviewFile" catchlongtap="onDeleteFile" data-index="{{index}}">
+					<image class="dicon" src="{{item}}"></image>
+				</view>
+				<view class="item" catchtap="onUpdateFile">
+					<text class="dadd center">+</text>
 				</view>
 			</view>
 		</view>
-		<view class="param">
+		<!-- <view class="param">
 			<text class="title">健康度</text>
 			<view class="time_container">
-				<picker class="center" value="{{index}}" range="{{grade}}">
+				<picker class="center" model:value="{{gradeIndex}}" range="{{grade}}">
 					<view class="time">
-						<text>优</text>
+						<text>{{grade[gradeIndex]}}</text>
 						<image class="pull" src="/img/login/icon_pull.png"></image>
 					</view>
 				</picker>
 			</view>
-		</view>
-		<view class="param row" wx:if="{{type==0}}">
+		</view> -->
+		<!-- <view class="param row" wx:if="{{type==0}}">
 			<text class="title">投放主播分类</text>
 			<image class="enter" src="/img/mine/icon_mine_enter.png"></image>
-		</view>
-		<text class="submit center" wx:if="{{type==0}}">提交审核(审核通过后付款)</text>
+		</view> -->
+		<text class="submit center" wx:if="{{type==0}}" catchtap="onSubmit">提交审核(审核通过后付款)</text>
 		<text class="resubmit center" wx:if="{{type==1}}">重新提交</text>
 	</view>
 </scroll-view>

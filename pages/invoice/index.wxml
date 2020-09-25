@@ -47,7 +47,7 @@
 		</view>
 	</view>
 	<!-- 确认按钮 -->
-	<button class="btn" form-type="submit">提交</button>
+	<button class="button" form-type="submit">提交</button>
 </form>
 
 <!-- 遮罩层 -->

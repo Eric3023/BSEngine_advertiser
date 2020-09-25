@@ -2,6 +2,21 @@ page {
   background-color: white;
 }
 
+.margin {
+  margin-right: 20rpx;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 .padding {
   width: 100%;
   padding: 0 24rpx;
@@ -37,7 +52,8 @@ page {
 
 input,
 picker,
-textarea {
+textarea,
+.border {
   border: 1rpx solid #fd8400;
   border-radius: 6rpx;
   padding: 4rpx 8rpx;
@@ -48,6 +64,20 @@ textarea {
   height: 60rpx;
   margin: 14rpx 30rpx;
   box-sizing: border-box;
+}
+
+.order {
+  width: 244rpx;
+  height: 60rpx;
+  margin: 14rpx 30rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+
+.price {
+  width: 244rpx;
+  height: 60rpx;
+  color: #fd8400;
 }
 
 .desc {
@@ -142,6 +172,31 @@ picker {
   background-color: #cbcbcb;
 }
 
+.type {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+}
+
+.picker {
+  width: 642rpx;
+  height: 60rpx;
+}
+
+.picker_container {
+  height: 60rpx;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rpx 10rpx;
+  position: relative;
+  color: #646464;
+}
+
+
 .resubmit {
   width: 652rpx;
   background-color: #fd8400;
@@ -153,7 +208,7 @@ picker {
   border-radius: 36rpx;
 }
 
-.submit{
+.submit {
   width: 652rpx;
   background-color: white;
   margin: 80rpx 24rpx 48rpx 24rpx;
@@ -173,8 +228,17 @@ picker {
   top: 6rpx;
 }
 
-.enter{
+.pull_second {
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 10rpx;
+  top: 16rpx;
+}
+
+.enter {
   width: 36rpx;
   height: 36rpx;
   margin-right: 10rpx;
+  margin-left: 10rpx;
 }
