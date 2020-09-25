@@ -180,9 +180,12 @@ Page({
         let balance = res.data.totalAmount;
         balance = balance.toFixed(2);
         let likesNum = res.data.likesNum
+        let hasToPay = res.data.hasToPay
         this.setData({
           balance,//账号余额
           likesNum,//是否认证
+
+          hasToPay,//是否有待支付
         });
       }
     ).catch(e => {

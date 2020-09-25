@@ -231,7 +231,7 @@ Page({
     this._addLock();
     wx.showLoading();
     mediaModel.getMediaAccounts({
-      // name: this.data.keyword,
+      name: this.data.keyword,
       page: this.data.page,
       size: this.data.size,
     }).then(

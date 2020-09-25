@@ -1,3 +1,4 @@
+<wxs src="util.wxs" module="util" />
 <scroll-view class="scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
 		<view class="header" wx:if="{{false}}">
@@ -6,23 +7,22 @@
 
 		<!-- 订单列表 -->
 		<view class="list">
-			<block wx:for="{{10}}" wx:index="index">
-				<view class="item">
-					<image class="icon" src="/img/plateform/douyin.png"></image>
+			<block wx:for="{{list}}" wx:key="index">
+				<view class="item" catchtap="onClickItem" data-item="{{item}}">
+					<image class="icon" src="{{item.mediaIcon}}"></image>
 					<view class="content">
-						<view>
-							<text class="name">活动1</text>
-							<text class="time">开始时间：2020-09-01</text>
-						</view>
+						<text class="name margin ell">{{item.name}}</text>
+						<text class="time margin">开始时间：{{item.startTime}}</text>
 						<view class="margin">
-							<text class="total">总账号数：30</text>
-							<text class="success">成功号数：30</text>
+							<text class="total">总账号数：{{item.orderNum}}</text>
+							<text class="success">已接单：{{item.orderNumUse}}</text>
 						</view>
-						<view class="money margin">消费金额：3000元</view>
+						<view class="money margin">消费金额：{{item.totalPrice}}元</view>
 					</view>
-					<view class="state center">投放中</view>
+					<view class="{{util.getClass(item.status)}} center state">{{util.getStatus(item.status)}}</view>
 				</view>
 			</block>
 		</view>
+		<empty show="{{!(list&&list.length!=0)&&!lock}}" message="数据列表为空~~~" />
 	</view>
 </scroll-view>

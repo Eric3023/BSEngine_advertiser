@@ -1,0 +1,41 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="container">
+	<view class="header">
+		<view class="flag_container center">
+			<text class="flag center">投放中</text>
+		</view>
+		<view class="name center">活动名称</view>
+		<view class="param">
+			<text>媒体平台：</text>
+			<image class="icon" src="/img/plateform/douyin.png"></image>
+		</view>
+		<view class="param">
+			<text>开始时间：</text>
+			<text>2020-09-01</text>
+		</view>
+		<view class="param">
+			<text>总账号数：</text>
+			<text>30</text>
+		</view>
+		<view class="param">
+			<text>已接单：</text>
+			<text>30</text>
+		</view>
+		<view class="param">
+      <text class="totalPrice">消费金额3000元</text>
+    </view>
+	</view>
+
+	<view class="body">
+		<view class="title">
+			<view class="point"></view>
+			<text>已接单主播列表</text>
+			<view class="point"></view>
+		</view>
+		<view wx:for="{{10}}" wx:key="index" catchtap="onClickItem" data-item="{{item}}">
+			<anchor type="{{1}}" imgurl="{{item.headImg}}" name="标题" desc="描述" fans="{{format.hexFormat(232232)}}" follow="{{format.hexFormat(232322)}}" like="{{format.hexFormat(23221453)}}" />
+		</view>
+		<empty show="{{!(list&&list.length!=0)&&!lock}}" message="数据列表为空~~~" />
+	</view>
+
+</view>

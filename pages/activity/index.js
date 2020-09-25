@@ -231,8 +231,14 @@ Page({
   onSubmit: function (event) {
     let param = {}
     //媒体类型(平台)
-    if (this.data.platform != undefined) {
-      param.mediaType = this.data.platform
+    if (this.data.media != undefined) {
+      param.mediaType = this.data.media.id
+    } else {
+      wx.showToast({
+        title: '请选择媒体平台',
+        icon: 'none',
+      })
+      return
     }
     //活动主题
     if (this.data.name != undefined) {
@@ -314,7 +320,7 @@ Page({
     }
     //活动分类
     if (this.data.industry != undefined) {
-      param.industry = this.data.industry.id
+      param.liveType = this.data.industry.id
     }
     //资质链接
     if (this.data.link != undefined) {
@@ -356,11 +362,11 @@ Page({
         success: res => {
           if (res.confirm) {
             this._reset()
-          } else if (res.cancel) {
-            this._reset()
             wx.navigateTo({
               url: '/pages/orders/index',
             })
+          } else if (res.cancel) {
+            this._reset()
           }
         }
       })

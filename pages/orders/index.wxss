@@ -113,7 +113,7 @@ page {
 
 .list {
   width: 700rpx;
-  margin: 70rpx 25rpx 0 25rpx;
+  margin: 20rpx 25rpx 30rpx 25rpx;
   display: flex;
   flex-direction: column;
 }
@@ -123,12 +123,13 @@ page {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 25rpx 0;
+  margin: 18rpx 0;
 }
 
 .item .icon {
   width: 66rpx;
   height: 66rpx;
+  border-radius: 10rpx;
 }
 
 .item .content {
@@ -141,7 +142,6 @@ page {
 
 .item .content .time{
   color: #7a7a7a;
-  margin-left: 16rpx;
 }
 
 .item .content .success{
@@ -156,11 +156,39 @@ page {
   color: #ff7b00;
 }
 
-.item .state {
-  width: 100rpx;
-  height: 100rpx;
-  font-size: 28rpx;
+.item .state{
+  width: 108rpx;
+  height: 108rpx;
   color: white;
-  background-color: #fea602;
   border-radius: 50%;
+}
+
+.wait_test {
+  background: linear-gradient(to right, #778dff, #0b53eb);
+  font-size: 28rpx;
+}
+
+.wait_pay {
+  background: linear-gradient(to right, #ff77f4, #ff53cf);
+  font-size: 28rpx;
+}
+
+.payed {
+  background: linear-gradient(to right, #fd96cb, #ff23af);
+  font-size: 28rpx;
+}
+
+.throwing {
+  background: linear-gradient(to right, #ebc071, #fea602);
+  font-size: 28rpx;
+}
+
+.completed {
+  background: linear-gradient(to right, #c7fd0b, #7cdc01);
+  font-size: 28rpx;
+}
+
+.fail {
+  background: linear-gradient(to right, #c23fff, #b905dc);
+  font-size: 24rpx;
 }

@@ -8,6 +8,7 @@ Component({
     content: String,
     info: String,
     num: Number,
+    showInfo:Boolean,
   },
 
   /**

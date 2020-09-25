@@ -42,7 +42,8 @@
     "pages/material/index",
     "pages/activity/index",
     "pages/informations/index",
-    "pages/information/index"
+    "pages/information/index",
+    "pages/detail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
