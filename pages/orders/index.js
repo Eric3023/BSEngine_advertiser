@@ -67,6 +67,15 @@ Page({
     // this._getOrders();
   },
 
+  /**
+   * 查看全部
+   */
+  onAll:function(){
+    wx.navigateTo({
+      url: '/pages/consum/index',
+    })
+  },
+
 
   /**
    * 获取我的订单列表

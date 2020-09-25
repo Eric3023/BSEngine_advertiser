@@ -29,7 +29,7 @@
 
 .list {
   width: 700rpx;
-  margin: 80rpx 25rpx 0 25rpx;
+  margin: 25rpx 25rpx 0 25rpx;
   display: flex;
   flex-direction: column;
 }

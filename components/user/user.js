@@ -7,6 +7,7 @@ Component({
     uicon: {
       type: String
     },
+    uname: String,
     uid: {
       type: String
     },

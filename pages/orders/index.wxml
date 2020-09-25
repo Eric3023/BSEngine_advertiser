@@ -23,7 +23,7 @@
 			</view>
 			<view class="title_container">
 				<text class="child1">我的活动</text>
-				<text class="child2 center">查看全部</text>
+				<text class="child2 center" catchtap="onAll">查看全部</text>
 			</view>
 			<scroll-view scroll-x="false" scroll-y="false">
 				<view class="state">

@@ -1,6 +1,6 @@
 <scroll-view class="scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
-		<view class="header">
+		<view class="header" wx:if="{{false}}">
 			<text>活动选择</text>
 		</view>
 

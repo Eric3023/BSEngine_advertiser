@@ -28,6 +28,8 @@ module.exports = {
   changePassword: BaseApi + '/wx/auth/reset',
   //分享验证码
   shareUrl: BaseApi + '/wx/user/getSharedUrl',
+  //用户信息接口
+  UserInfo: BaseApi + '/wx/user/advIndex',
 
   //获取主播账号
   mediaAccounts: BaseApi + '/api/mediaAccount/getListForAdvertisers',
@@ -49,8 +51,6 @@ module.exports = {
   Upload: WxApiRoot + 'storage/upload',
   //充值记录接口
   PayRecord: WxApiRoot + 'pay/payRecord',
-  //用户信息接口
-  UserInfo: WxApiRoot + 'user/index',
   //订单列表
   Order: WxApiRoot + 'advertising/getAdvertisings',
   //企业认证

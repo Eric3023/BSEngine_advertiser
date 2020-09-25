@@ -3,23 +3,23 @@
 	<view class="container">
 		<!-- 1.用户信息 -->
 		<view class="header_container">
-			<view class="header">
+			<view class="header" wx:if="{{false}}">
 				<image class="icon" src="/img/mine/icon_money_ad.png"></image>
 			</view>
 			<!-- 1.1 用户简介：头像和手机号 -->
 			<view class="content">
 				<view class="user_info">
-					<v_user class="header_user_container" authored="{{authored}}" uicon="{{user_info.uicon}}" bind:getWxUserInfo="getWxUserInfo" uid="{{user_info.uid}}" flag="{{user_info.flag}}" />
+					<v_user class="header_user_container" authored="{{authored}}" uicon="{{user_info.uicon}}" bind:getWxUserInfo="getWxUserInfo" uname="{{user_info.uid}}" flag="{{user_info.flag}}" />
 				</view>
 				<!-- 1.2 账户余额 -->
 				<view class="header_user_balance">
 					<view class="item" catchtap="onClick" data-index="我的喜欢">
-						<text class="fans">2398745</text>
+						<text class="fans">{{likesNum}}</text>
 						<text>关注粉丝</text>
 					</view>
 					<view class="item" catchtap="onWithdraw" data-index="我的收益">
 						<view class="money_container">
-							<text class="money">70019080</text>
+							<text class="money">{{balance}}</text>
 							<text class="rmb">（元）</text>
 						</view>
 						<text>账户余额</text>

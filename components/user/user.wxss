@@ -26,13 +26,19 @@
 }
 
 .nickName {
-  font-size: 32rpx;
-  color: #242424;
+  line-height: normal !important;
+  font-size: 32rpx !important;
+  color: #363636 !important;
+  background-color: transparent !important;
+  line-height: normal;
+  padding: 0 !important;
+  border: none !important;
 }
 
 .uid {
+  line-height: normal !important;
   font-size: 28rpx !important;
-  color: #242424 !important;
+  color: white !important;
   margin-top: 12rpx !important;
   border: none !important;
   background-color: transparent !important;
@@ -47,12 +53,8 @@
   border: none !important;
 }
 
-/* button[disabled] {
-  margin-left: 18rpx !important;
-  font-size: 30rpx !important;
-  color: white !important;
-  border: none !important;
-  background: #ffffff !important;
+.nickName::after {
+  line-height: normal;
   padding: 0 !important;
-  border:none !important;
-} */
+  border: none !important;
+}

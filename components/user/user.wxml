@@ -1,7 +1,9 @@
 <view class="user_container">
-	<image class="uicon" src="{{uicon?uicon:'img/icon_header.png'}}" slot="img"></image>
+	<image_button class="uicon" open-type="getUserInfo" disabled="{{uname}}" bind:userinfo="getUserInfo">
+		<image src="{{uicon?uicon:'img/icon_header.png'}}" slot="img"></image>
+	</image_button>
 	<view class="content">
-		<text class="nickName">赚钱的APP</text>
-		<text class="uid">ID:123546546</text>
+		<button class="nickName" open-type="getUserInfo" disabled="{{uname}}" bind:getuserinfo="getWxUserInfo" plain="true">{{uname? uname:'获取用户昵称'}}</button>
+		<!-- <text class="uid">ID:123546546</text> -->
 	</view>
 </view>

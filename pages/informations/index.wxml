@@ -1,7 +1,7 @@
 <scroll-view class="scroll" scroll-x="false" scroll-y="true">
 	<view class="container">
 		<block wx:for="{{10}}" wx:key="index">
-			<view class="item">
+			<view class="item" catchtap="onClickItem">
 				<image class="icon" src="/img/plateform/kuai.png"></image>
 				<view class="content">
 					<view class="header">

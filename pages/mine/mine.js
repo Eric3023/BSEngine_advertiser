@@ -13,6 +13,7 @@ Page({
     authored: 0,//0:未认证；1：认证中；2：已认证
     hasLogin: false,
     balance: '0.00',
+    likesNum: 0,
     user_info: {
       uicon: "",
       uid: "",
@@ -62,9 +63,9 @@ Page({
           url: '/pages/recharge_record/record',
         })
         break;
-      case '订单规则':
+      case '消息通知':
         wx.navigateTo({
-          url: `/pages/webview/webview?url=${config.BaseImgApi + "html/policy.html"}`,
+          url: `/pages/informations/index`,
         })
         break;
       case '设置':
@@ -87,10 +88,7 @@ Page({
    */
   onLoad: function (option) {
     this._resetUserInfo();
-    // this._checkLogin();
-    // if (this.data.hasLogin === true) {
-    //   this._getBalance();
-    // }
+    this._checkLogin();
   },
 
   onRecharge: function () {
@@ -101,7 +99,7 @@ Page({
 
   onShow() {
     if (this.data.hasLogin === true) {
-      this._getBalance();
+      this._getUserInfoFromNet();
     }
   },
 
@@ -133,15 +131,6 @@ Page({
       wx.setStorageSync('uicon', userinfo.avatarUrl);
       wx.setStorageSync('uid', userinfo.nickName);
     }
-  },
-
-  /**
-   * 实名认证
-   */
-  onAuthor(event) {
-    wx.navigateTo({
-      url: `/pages/author/author?isAuth=${this.data.authored}`,
-    })
   },
 
   /**
@@ -183,16 +172,17 @@ Page({
   },
 
   /**
-   * 获取账户余额
+   * 获取用户信息
    */
-  _getBalance() {
+  _getUserInfoFromNet() {
     userModel.getUserInfo().then(
       res => {
         let balance = res.data.totalAmount;
         balance = balance.toFixed(2);
+        let likesNum = res.data.likesNum
         this.setData({
-          balance: balance,//账号余额
-          authored: res.data.isAuth,//是否认证
+          balance,//账号余额
+          likesNum,//是否认证
         });
       }
     ).catch(e => {
