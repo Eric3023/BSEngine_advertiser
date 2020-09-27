@@ -103,7 +103,7 @@ Page({
         this.setData({
           images: this.data.images
         });
-
+        this._getImgResolution(res.data.url)
       }, error => {
         console.log(`上传失败：${error}`);
       });
@@ -156,7 +156,7 @@ Page({
   },
 
   /**
-   * 预览数据截图
+   * 预览资质文件
    */
   onPreviewFile: function (event) {
     if (this.data.touchEndTime - this.data.touchStartTime > 350) return;
@@ -167,7 +167,7 @@ Page({
   },
 
   /**
-   * 删除数据截图
+   * 删除资质文件
    */
   onDeleteFile: function (event) {
     let index = event.currentTarget.dataset.index
@@ -330,6 +330,10 @@ Page({
     if (this.data.files != undefined) {
       param.qualifiedFile = this.data.files.join(',')
     }
+    //图片分辨率
+    if (this.data.resolution != undefined) {
+      param.resolution = this.data.resolution
+    }
 
     // let data = {
     //   adUrl: adUrl,
@@ -446,8 +450,6 @@ Page({
    * 重置数据
    */
   _reset: function () {
-    console.log("=====================================");
-
     this.setData({
       //播报类型索引
       broadcastIndex: [0, 0],
@@ -471,5 +473,17 @@ Page({
       industry: {},
       link: '',
     })
-  }
+  },
+
+  /**
+   * 获取图片尺寸
+   */
+  _getImgResolution(path) {
+    wx.getImageInfo({
+      src: path,
+      success: res => {
+        this.data.resolution = res.width + '*' + res.height
+      },
+    })
+  },
 })

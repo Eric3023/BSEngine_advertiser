@@ -60,15 +60,7 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": [
-				{
-					"id": -1,
-					"name": "pages/orders/index",
-					"pathName": "pages/orders/index",
-					"query": "",
-					"scene": null
-				}
-			]
+			"list": []
 		}
 	}
 }

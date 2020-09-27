@@ -9,9 +9,9 @@
 					<text class="add center" wx:if="{{index==medias.length-1}}" catchtap="onSelectMedia">+</text>
 				</view> -->
 
-				<view class="item">
+				<view class="item" catchtap="onSelectMedia">
 					<image class="icon" wx:if="{{media}}" src="{{media.icon}}"></image>
-					<text class="add center" wx:if="{{!media}}" catchtap="onSelectMedia">+</text>
+					<text class="add center" wx:if="{{!media}}">+</text>
 				</view>
 			</view>
 		</view>
@@ -22,11 +22,15 @@
 		<view class="param">
 			<text class="title">活动图片</text>
 			<view class="platform">
-				<view class="item" wx:for="{{images}}" wx:key="index" catchtap="onPreviewImage" catchlongtap="onDeleteImage" data-index="{{index}}">
-					<image class="dicon" src="{{item}}"></image>
+				<!-- <view class="item" wx:for="{{images}}" wx:key="index" catchtap="onPreviewImage" catchlongtap="onDeleteImage" data-index="{{index}}">
+					<image class="dicon" src="{{iteimagesm}}"></image>
 				</view>
 				<view class="item" catchtap="onUpdateImage">
 					<text class="dadd center">+</text>
+				</view> -->
+				<view class="item">
+					<image class="dicon" wx:if="{{images&&images[0]}}" src="{{images[0]}}" catchtap="onPreviewImage" catchlongtap="onDeleteImage" data-index="{{0}}"></image>
+					<text class="dadd center" wx:if="{{!(images&&images[0])}}" catchtap="onUpdateImage">+</text>
 				</view>
 			</view>
 		</view>

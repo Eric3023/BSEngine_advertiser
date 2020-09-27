@@ -49,6 +49,7 @@
 .icon {
   width: 72rpx;
   height: 72rpx;
+  border-radius: 10rpx;
 }
 
 .totalPrice{

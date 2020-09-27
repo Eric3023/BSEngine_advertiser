@@ -44,8 +44,10 @@ module.exports = {
   broadcastType: BaseApi + '/api/mediaAccount/getBroadcastTypes',
   //我的活动
   adActivitys: BaseApi + '/api/activity/getAdActivitys',
-
-
+  //活动详情
+  activityDetail: BaseApi + '/api/activity/getActivityDeatil',
+  //活动已接单主播列表
+  activityAccounts: BaseApi + '/api/activity/getMediaAccountListByAid',
 
   //图片根地址
   BaseImgApi: BaseApi,

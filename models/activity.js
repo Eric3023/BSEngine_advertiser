@@ -30,8 +30,24 @@ function getActivityList({ status, page, size }) {
   return check.checkResult(util.request(config.adActivitys, param));
 }
 
+/**
+ * 获取活动详情
+ */
+function getActivityDetail({ id }) {
+  return check.checkResult(util.request(config.activityDetail, { aid: id }));
+}
+
+/**
+ * 获取活动已接单主播列表
+ */
+function getActivityAccounts({ id }) {
+  return check.checkResult(util.request(config.activityAccounts, { aid: id }));
+}
+
 module.exports = {
   addActivity: addActivity,
   getBroadcastType: getBroadcastType,
   getActivityList: getActivityList,
+  getActivityDetail: getActivityDetail,
+  getActivityAccounts: getActivityAccounts,
 }

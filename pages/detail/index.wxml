@@ -7,22 +7,22 @@
 		<view class="name center">活动名称</view>
 		<view class="param">
 			<text>媒体平台：</text>
-			<image class="icon" src="/img/plateform/douyin.png"></image>
+			<image class="icon" src="{{data.mediaIcon}}"></image>
 		</view>
 		<view class="param">
 			<text>开始时间：</text>
-			<text>2020-09-01</text>
+			<text>{{data.startTime}}</text>
 		</view>
 		<view class="param">
 			<text>总账号数：</text>
-			<text>30</text>
+			<text>{{data.orderNum?data.orderNum:0}}</text>
 		</view>
 		<view class="param">
 			<text>已接单：</text>
-			<text>30</text>
+			<text>{{data.orderNumUse?data.orderNumUse:0}}</text>
 		</view>
 		<view class="param">
-      <text class="totalPrice">消费金额3000元</text>
+      <text class="totalPrice">消费金额{{data.totalPrice?data.totalPrice:0}}元</text>
     </view>
 	</view>
 
@@ -32,8 +32,8 @@
 			<text>已接单主播列表</text>
 			<view class="point"></view>
 		</view>
-		<view wx:for="{{10}}" wx:key="index" catchtap="onClickItem" data-item="{{item}}">
-			<anchor type="{{1}}" imgurl="{{item.headImg}}" name="标题" desc="描述" fans="{{format.hexFormat(232232)}}" follow="{{format.hexFormat(232322)}}" like="{{format.hexFormat(23221453)}}" />
+		<view wx:for="{{list}}" wx:key="index" catchtap="onClickItem" data-item="{{item}}">
+			<anchor type="{{1}}" imgurl="{{item.headImg}}" name="{{item.accountName}}" desc="{{item.accountDesc}}" fans="{{format.hexFormat(item.fansNum)}}" follow="{{format.hexFormat(item.followNum)}}" like="{{format.hexFormat(item.liked)}}" />
 		</view>
 		<empty show="{{!(list&&list.length!=0)&&!lock}}" message="数据列表为空~~~" />
 	</view>
