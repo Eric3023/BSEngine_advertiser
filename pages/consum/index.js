@@ -79,6 +79,7 @@ Page({
   onLongClickItem(event) {
     let item = event.currentTarget.dataset.item
     let index = event.currentTarget.dataset.index
+    //待审核、待支付、审核失败，长按删除
     if (item.status == 0 || item.status == 1 || item.status == 5) {
       wx.showModal({
         content: '是否需要删除订单',
@@ -90,6 +91,38 @@ Page({
         success: res => {
           if (res.confirm) {
             this._delActivity(item.id, index)
+          }
+        }
+      })
+    }
+    //投放中，长按暂停
+    else if (item.status == 3) {
+      wx.showModal({
+        content: '是否需要暂停订单',
+        showCancel: true,
+        cancelText: '取消',
+        confirmText: '暂停',
+        confirmColor: '#fd8400',
+
+        success: res => {
+          if (res.confirm) {
+            this._paudeActivity(item.id, index)
+          }
+        }
+      })
+    }
+    //暂停中，长按继续
+    else if (item.status == 6) {
+      wx.showModal({
+        content: '是否继续执行订单',
+        showCancel: true,
+        cancelText: '取消',
+        confirmText: '确定',
+        confirmColor: '#fd8400',
+
+        success: res => {
+          if (res.confirm) {
+            this._continueActivity(item.id, index)
           }
         }
       })
@@ -193,6 +226,49 @@ Page({
     }).catch(exp => {
       wx.showToast({
         title: '删除失败',
+        icon: 'none',
+      })
+    })
+  },
+
+    /**
+   * 暂停活动
+   */
+  _paudeActivity: function (id, index) {
+    activityModel.pauseActivity({ id: id }).then(res => {
+      wx.showToast({
+        title: '暂停成功',
+        icon: 'none',
+      })
+      this.data.list[index].status = 6//状态修改为暂停中
+      this.setData({
+        list: this.data.list
+      })
+    }).catch(exp => {
+
+      wx.showToast({
+        title: '暂停失败',
+        icon: 'none',
+      })
+    })
+  },
+
+  /**
+   * 继续活动
+   */
+  _continueActivity: function (id, index) {
+    activityModel.continueActivity({ id: id }).then(res => {
+      wx.showToast({
+        title: '操作成功',
+        icon: 'none',
+      })
+      this.data.list[index].status = 3//状态修改为投放中
+      this.setData({
+        list: this.data.list
+      })
+    }).catch(exp => {
+      wx.showToast({
+        title: '操作失败',
         icon: 'none',
       })
     })

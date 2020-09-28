@@ -1,46 +1,38 @@
 var getStatus = function (type) {
   switch (type) {
-    //待接单
     case 0:
       return '待审核'
-    //待执行
     case 1:
       return '待支付'
-    //待质检
     case 2:
       return '已支付'
-    //已质检
     case 3:
       return '投放中'
-    //已完成
     case 4:
       return '已完成'
-    //已拒单
     case 5:
       return '审核失败'
+    case 6:
+      return '暂停中'
   }
 }
 
 var getClass = function (type) {
   switch (type) {
-    //待接单
     case 0:
       return 'wait_test'
-    //待执行
     case 1:
       return 'wait_pay'
-    //待质检
     case 2:
       return 'payed'
-    //已质检
     case 3:
       return 'throwing'
-    //已完成
     case 4:
       return 'completed'
-    //已拒单
     case 5:
       return 'fail'
+    case 6:
+      return 'paused'
   }
 }
 

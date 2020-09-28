@@ -109,3 +109,8 @@
   background: linear-gradient(to right, #c23fff, #b905dc);
   font-size: 24rpx;
 }
+
+.paused{
+  background: linear-gradient(to right, #ababab, #909090);
+  font-size: 28rpx;
+}

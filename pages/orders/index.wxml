@@ -29,7 +29,7 @@
 			<scroll-view scroll-x="false" scroll-y="false">
 				<view class="state">
 					<view wx:for="{{types}}" wx:key="index">
-						<image class="icon" src="{{item.icon}}" data-index="{{index}}" catchtap="onChangeType"></image>
+						<image class="icon" src="{{item.icon}}" data-item="{{item}}" catchtap="onChangeType"></image>
 					</view>
 				</view>
 			</scroll-view>
@@ -37,7 +37,7 @@
 		<!-- 订单列表 -->
 		<view class="list">
 			<block wx:for="{{orders}}" wx:key="index">
-				<view class="item" catchtap="onClickItem" catchtap="onLongClickItem" data-item="{{item}}" data-index="{{index}}">
+				<view class="item" catchtap="onClickItem" catchlongtap="onLongClickItem" data-item="{{item}}" data-index="{{index}}">
 					<image class="icon" src="{{item.mediaIcon}}"></image>
 					<view class="content">
 						<text class="name margin ell">{{item.name}}</text>

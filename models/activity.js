@@ -24,6 +24,20 @@ function delActivity({ id }) {
 }
 
 /**
+ * 暂停活动
+ */
+function pauseActivity({ id }) {
+  return check.checkResult(util.request(config.pauseActivity, { aid: id }, 'POST'));
+}
+
+/**
+ * 继续活动
+ */
+function continueActivity({ id }) {
+  return check.checkResult(util.request(config.continueActivity, { aid: id }, 'POST'));
+}
+
+/**
  * 获取播报类型
  */
 function getBroadcastType() {
@@ -66,6 +80,8 @@ module.exports = {
   addActivity: addActivity,
   updateActivity: updateActivity,
   delActivity: delActivity,
+  pauseActivity: pauseActivity,
+  continueActivity: continueActivity,
   getBroadcastType: getBroadcastType,
   getActivityList: getActivityList,
   getActivityDetail: getActivityDetail,

@@ -8,7 +8,7 @@
 		<!-- 订单列表 -->
 		<view class="list">
 			<block wx:for="{{list}}" wx:key="index">
-				<view class="item" catchtap="onClickItem" catchtap="onLongClickItem" data-item="{{item}}" data-index="{{index}}">
+				<view class="item" catchtap="onClickItem" catchlongtap="onLongClickItem" data-item="{{item}}" data-index="{{index}}">
 					<image class="icon" src="{{item.mediaIcon}}"></image>
 					<view class="content">
 						<text class="name margin ell">{{item.name}}</text>
