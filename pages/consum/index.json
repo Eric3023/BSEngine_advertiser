@@ -2,5 +2,5 @@
   "usingComponents": {
     "empty": "/components/empty/index"
   },
-  "navigationBarTitleText": "消费明细"
+  "navigationBarTitleText": "活动列表"
 }

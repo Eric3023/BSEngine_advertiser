@@ -30,9 +30,78 @@ Page({
    * 点击Item
    */
   onClickItem: function(event){
+    if (this.data.touchEndTime - this.data.touchStartTime > 350) return;
     let item = event.currentTarget.dataset.item
+
+    switch (item.status) {
+      //待审核
+      case 0:
+        wx.navigateTo({
+          url: `/pages/detail2/index?id=${item.id}`,
+        })
+        return
+      //待支付
+      case 1:
+        wx.navigateTo({
+          url: `/pages/detail2/index?id=${item.id}`,
+        })
+        return
+      //审核失败
+      case 5:
+        wx.navigateTo({
+          url: `/pages/detail2/index?id=${item.id}`,
+        })
+        return
+      //已支付
+      case 2:
+        wx.navigateTo({
+          url: `/pages/detail/index?id=${item.id}`,
+        })
+        return
+      //投放中
+      case 3:
+        wx.navigateTo({
+          url: `/pages/detail/index?id=${item.id}`,
+        })
+        return
+      //已完成
+      case 4:
+        wx.navigateTo({
+          url: `/pages/detail/index?id=${item.id}`,
+        })
+        return
+    }
+  },
+
+  /**
+   * 长按订单，删除
+   */
+  onLongClickItem(event) {
+    let item = event.currentTarget.dataset.item
+    let index = event.currentTarget.dataset.index
+    if (item.status == 0 || item.status == 1 || item.status == 5) {
+      wx.showModal({
+        content: '是否需要删除订单',
+        showCancel: true,
+        cancelText: '取消',
+        confirmText: '删除',
+        confirmColor: '#fd8400',
+
+        success: res => {
+          if (res.confirm) {
+            this._delActivity(item.id, index)
+          }
+        }
+      })
+    }
+  },
+
+  /**
+   * 去支付
+   */
+  onSettle: function(){
     wx.navigateTo({
-      url: `/pages/detail/index?id=${item.id}`,
+      url: '/pages/settle/index',
     })
   },
 
@@ -107,4 +176,25 @@ Page({
       }
     );
   },
+
+  /**
+   * 删除活动
+   */
+  _delActivity: function (id, index) {
+    activityModel.delActivity({ id: id }).then(res => {
+      wx.showToast({
+        title: '删除成功',
+        icon: 'none',
+      })
+      this.data.list.splice(index, 1)
+      this.setData({
+        list: this.data.list
+      })
+    }).catch(exp => {
+      wx.showToast({
+        title: '删除失败',
+        icon: 'none',
+      })
+    })
+  }
 })

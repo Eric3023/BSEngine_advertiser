@@ -69,6 +69,15 @@ Page({
   },
 
   /**
+   * 去支付
+   */
+  onSettle: function () {
+    wx.navigateTo({
+      url: '/pages/settle/index',
+    })
+  },
+
+  /**
    * 按钮触摸开始触发的事件
    */
   onTouchStart: function (e) {
@@ -96,6 +105,7 @@ Page({
    * 点击订单列表，进入订单详情
    */
   onClickItem(event) {
+    if (this.data.touchEndTime - this.data.touchStartTime > 350) return;
     let item = event.currentTarget.dataset.item
 
     switch (item.status) {
@@ -135,6 +145,29 @@ Page({
           url: `/pages/detail/index?id=${item.id}`,
         })
         return
+    }
+  },
+
+  /**
+   * 长按订单，删除
+   */
+  onLongClickItem(event) {
+    let item = event.currentTarget.dataset.item
+    let index = event.currentTarget.dataset.index
+    if (item.status == 0 || item.status == 1 || item.status == 5) {
+      wx.showModal({
+        content: '是否需要删除订单',
+        showCancel: true,
+        cancelText: '取消',
+        confirmText: '删除',
+        confirmColor: '#fd8400',
+
+        success: res => {
+          if (res.confirm) {
+            this._delActivity(item.id, index)
+          }
+        }
+      })
     }
   },
 
@@ -216,4 +249,25 @@ Page({
       }
     );
   },
+
+  /**
+   * 删除活动
+   */
+  _delActivity: function (id, index) {
+    activityModel.delActivity({ id: id }).then(res => {
+      wx.showToast({
+        title: '删除成功',
+        icon: 'none',
+      })
+      this.data.orders.splice(index, 1)
+      this.setData({
+        orders: this.data.orders
+      })
+    }).catch(exp => {
+      wx.showToast({
+        title: '删除失败',
+        icon: 'none',
+      })
+    })
+  }
 })

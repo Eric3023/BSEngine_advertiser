@@ -17,6 +17,13 @@ function updateActivity(data) {
 }
 
 /**
+ * 删除活动
+ */
+function delActivity({ id }) {
+  return check.checkResult(util.request(config.delActivity, { aid: id }, 'POST'));
+}
+
+/**
  * 获取播报类型
  */
 function getBroadcastType() {
@@ -58,6 +65,7 @@ function getActivityAccounts({ id, page = 0, size = 10 }) {
 module.exports = {
   addActivity: addActivity,
   updateActivity: updateActivity,
+  delActivity: delActivity,
   getBroadcastType: getBroadcastType,
   getActivityList: getActivityList,
   getActivityDetail: getActivityDetail,

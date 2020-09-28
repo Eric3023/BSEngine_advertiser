@@ -8,7 +8,7 @@
 		<!-- 订单列表 -->
 		<view class="list">
 			<block wx:for="{{list}}" wx:key="index">
-				<view class="item" catchtap="onClickItem" data-item="{{item}}">
+				<view class="item" catchtap="onClickItem" catchtap="onLongClickItem" data-item="{{item}}" data-index="{{index}}">
 					<image class="icon" src="{{item.mediaIcon}}"></image>
 					<view class="content">
 						<text class="name margin ell">{{item.name}}</text>
@@ -19,7 +19,7 @@
 						</view>
 						<view class="money margin">消费金额：{{item.totalPrice}}元</view>
 					</view>
-					<view class="{{util.getClass(item.status)}} center state">{{util.getStatus(item.status)}}</view>
+					<view class="{{util.getClass(item.status)}} center state" catchtap="{{item.status==1?'onSettle':''}}">{{util.getStatus(item.status)}}</view>
 				</view>
 			</block>
 		</view>
