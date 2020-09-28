@@ -43,7 +43,8 @@
     "pages/activity/index",
     "pages/informations/index",
     "pages/information/index",
-    "pages/detail/index"
+    "pages/detail/index",
+    "pages/detail2/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

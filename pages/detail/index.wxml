@@ -2,9 +2,12 @@
 <view class="container">
 	<view class="header">
 		<view class="flag_container center">
-			<text class="flag center">投放中</text>
+			<text class="flag center">{{data.status==2?'已支付':(data.status==3?'投放中':'已完成')}}</text>
 		</view>
-		<view class="name center">活动名称</view>
+		<view class="name center">{{data.name}}</view>
+		<view>
+			<image class="img" src="{{data.picUrl}}" mode="widthFix"></image>
+		</view>
 		<view class="param">
 			<text>媒体平台：</text>
 			<image class="icon" src="{{data.mediaIcon}}"></image>
@@ -14,7 +17,31 @@
 			<text>{{data.startTime}}</text>
 		</view>
 		<view class="param">
-			<text>总账号数：</text>
+			<text>结束时间：</text>
+			<text>{{data.endTime}}</text>
+		</view>
+		<view class="param">
+			<text>反馈时间：</text>
+			<text>{{data.feedbackTime}}</text>
+		</view>
+		<view class="param2">
+			<text>活动描述：</text>
+			<text class="desc">{{data.desc}}</text>
+		</view>
+		<view class="param" wx:if="{{data.broadcastTypeName}}">
+			<text>播报类型：</text>
+			<text>{{data.broadcastTypeName}}</text>
+		</view>
+		<view class="param" wx:if="{{data.broadcastTypeName}}">
+			<text>播报次数：</text>
+			<text>{{data.broadcastTimes}}次</text>
+		</view>
+		<view class="param2">
+			<text>活动标分类：</text>
+			<text class="category center">{{data.liveTypeName? data.liveTypeName:'不限'}}</text>
+		</view>
+		<view class="param">
+			<text>总订单量数：</text>
 			<text>{{data.orderNum?data.orderNum:0}}</text>
 		</view>
 		<view class="param">
@@ -22,11 +49,14 @@
 			<text>{{data.orderNumUse?data.orderNumUse:0}}</text>
 		</view>
 		<view class="param">
-      <text class="totalPrice">消费金额{{data.totalPrice?data.totalPrice:0}}元</text>
+			<view class="price">
+				<text class="totalPrice">单价：{{data.unitPrice?data.unitPrice:0}}元</text>
+      	<text class="totalPrice">消费金额：{{data.totalPrice?data.totalPrice:0}}元</text>
+			</view>
     </view>
 	</view>
 
-	<view class="body">
+	<view class="body" wx:if="{{(data.status==3 || data.status==4)&&(list&&list.length>0)}}">
 		<view class="title">
 			<view class="point"></view>
 			<text>已接单主播列表</text>

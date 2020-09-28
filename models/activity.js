@@ -10,6 +10,13 @@ function addActivity(data) {
 }
 
 /**
+ * 更新活动
+ */
+function updateActivity(data) {
+  return check.checkResult(util.request(config.updateActivity, data, 'POST'));
+}
+
+/**
  * 获取播报类型
  */
 function getBroadcastType() {
@@ -40,12 +47,17 @@ function getActivityDetail({ id }) {
 /**
  * 获取活动已接单主播列表
  */
-function getActivityAccounts({ id }) {
-  return check.checkResult(util.request(config.activityAccounts, { aid: id }));
+function getActivityAccounts({ id, page = 0, size = 10 }) {
+  return check.checkResult(util.request(config.activityAccounts, {
+    aid: id,
+    page: page,
+    size: size
+  }));
 }
 
 module.exports = {
   addActivity: addActivity,
+  updateActivity: updateActivity,
   getBroadcastType: getBroadcastType,
   getActivityList: getActivityList,
   getActivityDetail: getActivityDetail,

@@ -4,14 +4,15 @@
 }
 
 .header {
+  width: 701rpx;
   height: fit-content;
   display: flex;
   flex-direction: column;
-  margin: 0rpx 22rpx;
+  margin: 0rpx 22rpx 20rpx 22rpx;
   position: relative;
 }
 
-.header .flag_container{
+.header .flag_container {
   width: 100rpx;
   height: 100rpx;
   background-color: #ea7332;
@@ -20,7 +21,7 @@
   top: 0;
 }
 
-.header .flag{
+.header .flag {
   color: white;
   font-size: 24rpx;
   position: relative;
@@ -39,11 +40,47 @@
 }
 
 .header .param {
-  width: 100%;
+  width: 673rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 10rpx 0 10rpx 28rpx;
+}
+
+.header .param2 {
+  width: 673rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx 0 10rpx 28rpx;
+}
+
+.header .desc {
+  margin: 10rpx 0 0 0;
+  background-color: #ffd0b7;
+  font-size: 28rpx;
+  color: #d45b27;
+  border-radius: 10rpx;
+  padding: 12rpx;
+  box-sizing: border-box;
+  line-height: 48rpx;
+}
+
+.header .category {
+  width: fit-content;
+  margin: 10rpx 0 0 0;
+  background-color: #ffd0b7;
+  font-size: 28rpx;
+  color: #d45b27;
+  border-radius: 10rpx;
+  padding: 6rpx 48rpx;
+  box-sizing: border-box;
+  line-height: 48rpx;
+}
+
+.img {
+  width: 100%;
+  height: 480rpx;
+  border-radius: 10rpx;
 }
 
 .icon {
@@ -52,8 +89,17 @@
   border-radius: 10rpx;
 }
 
-.totalPrice{
-  color: #ea7332;
+.price {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ea7332;
+  border-radius: 10rpx;
+}
+
+.totalPrice {
+  color: white;
+  padding: 12rpx;
 }
 
 .body {
@@ -61,7 +107,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20rpx 22rpx 40rpx 22rpx;
+  margin: 0 22rpx 40rpx 22rpx;
 }
 
 .title {

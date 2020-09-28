@@ -97,9 +97,45 @@ Page({
    */
   onClickItem(event) {
     let item = event.currentTarget.dataset.item
-    wx.navigateTo({
-      url: `/pages/detail/index?id=${item.id}`,
-    })
+
+    switch (item.status) {
+      //待审核
+      case 0:
+        wx.navigateTo({
+          url: `/pages/detail2/index?id=${item.id}`,
+        })
+        return
+      //待支付
+      case 1:
+        wx.navigateTo({
+          url: `/pages/detail2/index?id=${item.id}`,
+        })
+        return
+      //审核失败
+      case 5:
+        wx.navigateTo({
+          url: `/pages/detail2/index?id=${item.id}`,
+        })
+        return
+      //已支付
+      case 2:
+        wx.navigateTo({
+          url: `/pages/detail/index?id=${item.id}`,
+        })
+        return
+      //投放中
+      case 3:
+        wx.navigateTo({
+          url: `/pages/detail/index?id=${item.id}`,
+        })
+        return
+      //已完成
+      case 4:
+        wx.navigateTo({
+          url: `/pages/detail/index?id=${item.id}`,
+        })
+        return
+    }
   },
 
   /**

@@ -40,6 +40,8 @@ module.exports = {
 
   //添加活动
   addActivity: BaseApi + '/api/activity/addActivity',
+  //更新活动
+  updateActivity: BaseApi + '/api/activity/updateActivity',
   //活动播报类型
   broadcastType: BaseApi + '/api/mediaAccount/getBroadcastTypes',
   //我的活动
