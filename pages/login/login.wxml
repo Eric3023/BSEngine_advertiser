@@ -1,20 +1,20 @@
 <view class="container">
-  <view class="login-img-view">
-    <image src="../../img/login/login.png"></image>
-  </view>
-  <view class="login-box">
-    <button type="primary" disabled="{{disabled}}" open-type="getPhoneNumber" class="wx-login-btn" bindgetphonenumber="wxLogin">微信用户一键登录</button>
-    <text class="account-login {{!disabled?'inputphone-color-agree':'inputphone-color-reject'}}"   bindtap="accountLogin">输入手机号登录/注册</text>
-    
-  </view>
+	<view class="login-img-view">
+		<image src="../../img/login/login.png"></image>
+	</view>
+	<view class="login-box">
+		<button disabled="{{disabled}}" open-type="getPhoneNumber" class="wx-login-btn" bindgetphonenumber="wxLogin">微信用户一键登录</button>
+		<text class="account-login {{!disabled?'inputphone-color-agree':'inputphone-color-reject'}}"   bindtap="accountLogin">输入手机号登录/注册</text>
 
-  <view class="protocol">
-    <label class="checked-lable" catchtap='checkedTap'>
-    <!--color='#deab8a' -->
-      <radio checked="{{checked}}" style="transform:scale(0.7);">
-        <text catchtap="onJumpToPolicy">已阅读与同意</text>
-        <text style="color:#92afc8;" catchtap="onJumpToPolicy">《法律声明及隐私政策》</text>
-      </radio>
-    </label>
-  </view>
+	</view>
+
+	<view class="protocol">
+		<label class="checked-lable" catchtap='checkedTap'>
+			<!--color='#deab8a' -->
+			<radio checked="{{checked}}" color="#fd8400" style="transform:scale(0.7);">
+				<text>已阅读与同意</text>
+				<text style="color:#92afc8;" catchtap="onJumpToPolicy">《法律声明及隐私政策》</text>
+			</radio>
+		</label>
+	</view>
 </view>
