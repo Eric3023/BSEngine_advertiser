@@ -93,6 +93,8 @@ Page({
    * 获取媒体账号
    */
   _getMedias: function () {
+    if (this._isLock() || !this.data.hasMore) return;
+
     let param = {
       page: this.data.page,
       size: this.data.size,
