@@ -46,14 +46,24 @@ Page({
         id: 5,
         icon: '/img/activity/state5.png'
       },
-    ]
+    ],
+
+    showFlush: false,//重新进入页面是否需要刷新
+  },
+
+  onLoad: function(event){
+    this._getOrders();
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 生命周期函数
    */
-  onLoad: function (options) {
-    this._getOrders();
+  onShow: function () {
+    if(this.data.showFlush){
+      this.data.showFlush = false
+      this._reset(this.data.status)
+      this._getOrders();
+    }
   },
 
   /**
@@ -75,9 +85,10 @@ Page({
   /**
    * 去支付
    */
-  onSettle: function () {
+  onSettle: function (event) {
+    let item = event.currentTarget.dataset.item
     wx.navigateTo({
-      url: '/pages/settle/index',
+      url: `/pages/settle/index?id=${item.id}&totalPrice=${item.totalPrice}`,
     })
   },
 

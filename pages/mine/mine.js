@@ -1,6 +1,5 @@
 const userModel = require('../../models/user.js');
 const UserInfoHelper = require('../../utils/userInfo.js')
-const config = require('../../config/api.js')
 
 const userInfoHelper = new UserInfoHelper();
 Page({
@@ -22,28 +21,9 @@ Page({
     user_datas: [
       { icon: "/img/mine/icon_order_ad.png", title: "我的订单", info: '待支付订单' },
       { icon: "/img/mine/icon_recharge_ad.png", title: "充值记录" },
-      { icon: "/img/mine/icon_information_ad.png", title: "消息通知", num: 10 },
+      { icon: "/img/mine/icon_information_ad.png", title: "消息通知", num: 0 },
       { icon: "/img/mine/icon_setting_ad.png", title: "设置" }
     ]
-  },
-
-  /**
-   * 进入下级页面
-   */
-  onClick: function (event) {
-    let index = event.currentTarget.dataset.index;
-    switch (index) {
-      case '我的喜欢':
-        wx.navigateTo({
-          url: '/pages/collection/collection?title=我的喜欢',
-        })
-        break;
-      case '已经播报':
-        wx.navigateTo({
-          url: '/pages/tasks/tasks',
-        })
-        break;
-    }
   },
 
   /**
@@ -64,9 +44,9 @@ Page({
         })
         break;
       case '消息通知':
-        wx.navigateTo({
-          url: `/pages/informations/index`,
-        })
+        // wx.navigateTo({
+        //   url: `/pages/informations/index`,
+        // })
         break;
       case '设置':
         wx.navigateTo({

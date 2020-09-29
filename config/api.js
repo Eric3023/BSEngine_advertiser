@@ -56,6 +56,8 @@ module.exports = {
   activityDetail: BaseApi + '/api/activity/getActivityDeatil',
   //活动已接单主播列表
   activityAccounts: BaseApi + '/api/activity/getMediaAccountListByAid',
+  //活动结算
+  payActivity: BaseApi + '/api/activity/payActivity',
 
   //图片根地址
   BaseImgApi: BaseApi,
@@ -63,25 +65,14 @@ module.exports = {
   Upload: WxApiRoot + 'storage/upload',
   //充值记录接口
   PayRecord: WxApiRoot + 'pay/payRecord',
-  //订单列表
-  Order: WxApiRoot + 'advertising/getAdvertisings',
   //企业认证
   Author: WxApiRoot + 'ocr/auth',
   //优惠券列表
   Coupons: WxApiRoot + 'coupon/mylist',
-  //代开发票列表
+  //待开发票列表
   NoUserInvoice: WxApiRoot + 'pay/noUseInvoice',
   //开具发票
   OpenInvoice: WxApiRoot + 'pay/openInvoice',
-  //投放详情
-  ThrowDetail: WxApiRoot + 'advertising/getAdvertisingInfo',
-  //获取模板预览图片
-  PreviewImage: WxApiRoot + 'advertising/getTemplateImgUrl',
-  //投放价格表
-  AllPrices: WxApiRoot + 'advertising/getAllPrices',
-  //删除订单
-  delOrder: WxApiRoot + '/advertising/delAdvertising',
-
 
   //用户余额接口
   UserBalance: WxApiRoot + 'recharge/userBalance',

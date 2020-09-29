@@ -6,10 +6,10 @@ page {
   margin-right: 20rpx;
 }
 
-.row {
+.row_end {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .column {

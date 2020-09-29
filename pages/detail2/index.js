@@ -350,6 +350,48 @@ Page({
     //资质文件
     this.data.data.qualifiedFile = this.data.files.join(',')
 
+    //媒体类型(平台)
+    if (this.data.data.mediaType == undefined) {
+      wx.showToast({
+        title: '请选择媒体平台',
+        icon: 'none',
+      })
+      return
+    }
+    //活动主题
+    if (!this.data.data.name) {
+      wx.showToast({
+        title: '请输入活动标题',
+        icon: 'none',
+      })
+      return
+    }
+    //活动图片
+    if (!(this.data.data.picUrl)) {
+      wx.showToast({
+        title: '请上传活动图片',
+        icon: 'none',
+      })
+      return
+    }
+    
+    //订单量
+    if (this.data.data.orderNum == undefined || this.data.data.orderNum <= 0){
+      wx.showToast({
+        title: '请输入订单数量',
+        icon: 'none',
+      })
+      return
+    }
+    //单价
+    if (this.data.data.unitPrice == undefined || this.data.dataunitPrice <= 0 || this.data.data.unitPrice >= 10000000){
+      wx.showToast({
+        title: '请输入合法的单价',
+        icon: 'none',
+      })
+      return
+    }
+
     activityModel.updateActivity(this.data.data).then(res => {
       wx.showModal({
         content: '活动提交成功，\n请到我的订单查看详情',

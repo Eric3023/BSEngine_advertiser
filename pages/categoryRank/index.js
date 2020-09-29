@@ -23,6 +23,15 @@ Page({
   },
 
   /**
+   * 点击顶部搜索按钮
+   */
+  onSearch(event) {
+    wx.navigateTo({
+      url: '/pages/search/search',
+    })
+  },
+
+  /**
    * 点击了Item
    */
   onClickItem: function (event) {

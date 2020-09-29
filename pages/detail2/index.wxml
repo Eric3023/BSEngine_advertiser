@@ -28,7 +28,7 @@
 				<view class="item" catchtap="onUpdateImage">
 					<text class="dadd center">+</text>
 				</view> -->
-				<view class="item">
+				<view class="item row_end">
 					<image class="dicon" wx:if="{{data.picUrl}}" src="{{data.picUrl}}" catchtap="onPreviewImage" catchlongtap="onDeleteImage" data-index="{{0}}"></image>
 					<text class="dadd center" wx:if="{{!(data.picUrl)}}" catchtap="onUpdateImage">+</text>
 					<text class="tips">提示：长按删除图片</text>

@@ -76,6 +76,13 @@ function getActivityAccounts({ id, page = 0, size = 10 }) {
   }));
 }
 
+/**
+ * 支付活动
+ */
+function payActivity({ id }) {
+  return check.checkResult(util.request(config.payActivity, { aid: id }, 'POST'));
+}
+
 module.exports = {
   addActivity: addActivity,
   updateActivity: updateActivity,
@@ -86,4 +93,5 @@ module.exports = {
   getActivityList: getActivityList,
   getActivityDetail: getActivityDetail,
   getActivityAccounts: getActivityAccounts,
+  payActivity: payActivity,
 }

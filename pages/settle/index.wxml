@@ -1,24 +1,25 @@
+<wxs src="../../utils/format.wxs" module="format" />
 <view class="container">
-	<text class="title">￥2000.00</text>
-	<view class="param">
+	<text class="title">￥{{format.numberFormat(totalPrice-discount, 2)}}</text>
+	<view class="param" wx:if="{{false}}">
 		<text>订单编号：02525489982492277</text>
 		<text class="info">订单详情</text>
 	</view>
 	<view class="param">
 		<text>余额</text>
-		<text>￥5000.00</text>
+		<text>￥{{format.numberFormat(balance, 2)}}</text>
 	</view>
 	<view class="param">
 		<text>消费金额</text>
-		<text>￥2050.00</text>
+		<text>￥{{format.numberFormat(totalPrice, 2)}}</text>
 	</view>
 	<view class="param">
 		<text>优惠金额</text>
-		<text class="coupon">￥50.00</text>
+		<text class="coupon">￥{{format.numberFormat(discount, 2)}}</text>
 	</view>
 	<view class="param">
 		<text>应付金额</text>
-		<text class="settle">￥2000.00</text>
+		<text class="settle">￥{{format.numberFormat(totalPrice-discount, 2)}}</text>
 	</view>
-	<text class="button center">立即支付</text>
+	<text class="button center" catchtap="onPay">立即支付</text>
 </view>

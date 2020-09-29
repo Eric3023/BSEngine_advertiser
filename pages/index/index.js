@@ -56,9 +56,7 @@ Page({
    * 点击了活动Item
    */
   onClickItem: function (event) {
-    wx.navigateTo({
-      url: '/pages/rob/rob',
-    })
+
   },
 
   /**
@@ -170,12 +168,6 @@ Page({
     mediaModel.getMediaAccounts(param).then(
       res => {
         this.data.list = this.data.list.concat(res.data.list);
-
-        this.data.list = this.data.list.concat(res.data.list);
-        this.data.list = this.data.list.concat(res.data.list);
-        this.data.list = this.data.list.concat(res.data.list);
-        this.data.list = this.data.list.concat(res.data.list);
-
         this.setData({
           list: this.data.list,
         });

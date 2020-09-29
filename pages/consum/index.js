@@ -29,7 +29,7 @@ Page({
   /**
    * 点击Item
    */
-  onClickItem: function(event){
+  onClickItem: function (event) {
     if (this.data.touchEndTime - this.data.touchStartTime > 350) return;
     let item = event.currentTarget.dataset.item
 
@@ -132,9 +132,10 @@ Page({
   /**
    * 去支付
    */
-  onSettle: function(){
+  onSettle: function (event) {
+    let item = event.currentTarget.dataset.item
     wx.navigateTo({
-      url: '/pages/settle/index',
+      url: `/pages/settle/index?id=${item.id}&totalPrice=${item.totalPrice}`,
     })
   },
 
@@ -231,9 +232,9 @@ Page({
     })
   },
 
-    /**
-   * 暂停活动
-   */
+  /**
+ * 暂停活动
+ */
   _paudeActivity: function (id, index) {
     activityModel.pauseActivity({ id: id }).then(res => {
       wx.showToast({

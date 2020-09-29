@@ -1,5 +1,4 @@
 import wxValidate from './utils/WxValidate.js'
-const locationModel = require('./models/location.js');
 
 App({
   wxValidate: (rules, messages) => new wxValidate(rules, messages),
