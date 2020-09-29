@@ -10,8 +10,8 @@
 				</view> -->
 
 				<view class="item" catchtap="onSelectMedia">
-					<image class="icon" wx:if="{{media}}" src="{{media.icon}}"></image>
-					<text class="add center" wx:if="{{!media}}">+</text>
+					<image class="icon" wx:if="{{media&&(media.id!=undefind)}}" src="{{media.icon}}"></image>
+					<text class="add center" wx:if="{{!media||media.id==undefind}}">+</text>
 				</view>
 			</view>
 		</view>

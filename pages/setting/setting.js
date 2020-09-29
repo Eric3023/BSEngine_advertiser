@@ -8,6 +8,7 @@ Page({
   data: {
     list: [
       { icon: "/img/mine/icon_mine_collection.jpg", title: "修改密码" },
+      { icon: "/img/mine/icon_mine_proxy.jpg", title: "关于我们" },
       { icon: "/img/mine/icon_mine_setting.png", title: "退出登录" }
     ]
   },
@@ -51,6 +52,11 @@ Page({
       case '修改密码':
         wx.navigateTo({
           url: '/pages/password/password',
+        })
+        break;
+      case '关于我们':
+        wx.navigateTo({
+          url: '/pages/about/about',
         })
         break;
       case '退出登录':

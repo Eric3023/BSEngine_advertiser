@@ -231,7 +231,7 @@ Page({
   onSubmit: function (event) {
     let param = {}
     //媒体类型(平台)
-    if (this.data.media != undefined) {
+    if (this.data.media != undefined && this.data.media.id != undefined) {
       param.mediaType = this.data.media.id
     } else {
       wx.showToast({

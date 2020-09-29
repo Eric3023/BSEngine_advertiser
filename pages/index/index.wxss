@@ -85,7 +85,7 @@ scroll-view {
     flex-wrap: wrap;
     justify-content: flex-start;
     font-size: 28rpx;
-    margin: 0 29rpx;
+    margin: 0 29rpx 20rpx 29rpx;
 }
 
 .case-list .body_left {

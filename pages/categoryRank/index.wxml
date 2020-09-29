@@ -40,12 +40,12 @@
 					<text class="title">价格</text>
 				</view>
 				<view class="sub_container">
-					<text>{{price.min? format.hexFormat(price.min)+(price.max? '-'+format.hexFormat(price.max):'以上'):'不限'}}</text>
+					<text>{{price.min!=undefind? format.hexFormat(price.min)+(price.max? '-'+format.hexFormat(price.max):'以上'):'不限'}}</text>
 					<image class="icon" src="/img/icon/icon_enter.png" />
 				</view>
 			</view>
 			<!-- 受众画像 -->
-			<view class="param" catchtap="onClickItem" data-type="受众画像">
+			<view class="param" wx:if="{{false}}" catchtap="onClickItem" data-type="受众画像">
 				<view class="audience background">
 					<text class="title">受众画像</text>
 				</view>

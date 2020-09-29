@@ -22,6 +22,7 @@
   width: 102rpx;
   height: 102rpx;
   border-radius: 10rpx;
+  background-color: #fd8400;
 }
 
 .item .name {

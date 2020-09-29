@@ -22,10 +22,13 @@ Page({
   onClickItem: function (event) {
     let item = event.currentTarget.dataset.item;
 
+    if (item == undefined) {
+      item = {}
+    }
+
     this.setData({
       data: item
     })
-
     const pages = getCurrentPages()
     const prevPage = pages[pages.length - 2]
     prevPage.setData({
