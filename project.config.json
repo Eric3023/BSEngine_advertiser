@@ -60,7 +60,14 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/recharge_record/record",
+					"pathName": "pages/recharge_record/record",
+					"scene": null
+				}
+			]
 		}
 	}
 }

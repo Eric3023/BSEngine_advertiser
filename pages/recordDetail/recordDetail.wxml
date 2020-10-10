@@ -1,0 +1,19 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="container">
+	<view class="invoice" wx:if="{{data.isInvoice == 0}}">
+		<text catchtap="onInvoice">开发票</text>
+	</view>
+	<image class="icon" src="/img/icon/icon_wallet.png"></image>
+	<text class="title">{{data.message}}</text>
+	<text class="price">￥{{format.numberFormat(data.actualPrice, 2)}}</text>
+	<view class="line"></view>
+	<view class="content">提现状态
+		<text class="param">{{data.orderStatus == 201? '支付成功':(data.orderStatus == 203? '已退款':'支付失败')}}</text>
+	</view>
+	<view class="content">提现时间
+		<text class="param">{{data.payTime}}</text>
+	</view>
+	<view class="content">转账单号
+		<text class="param">{{data.orderSn}}</text>
+	</view>
+</view>

@@ -39,7 +39,8 @@
     "pages/informations/index",
     "pages/information/index",
     "pages/detail/index",
-    "pages/detail2/index"
+    "pages/detail2/index",
+    "pages/recordDetail/recordDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

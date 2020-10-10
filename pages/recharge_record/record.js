@@ -36,7 +36,7 @@ Page({
     let value = event.currentTarget.dataset.value;
     let jValue = JSON.stringify(value);
     wx.navigateTo({
-      url: `/pages/order_detail/order_detail?detail=${jValue}`,
+      url: `/pages/recordDetail/recordDetail?detail=${jValue}`,
     })
   },
 
