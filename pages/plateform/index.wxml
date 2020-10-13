@@ -1,8 +1,8 @@
 <view class="container">
-	<view class="item" catchtap="onClickItem">
+	<!-- <view class="item" catchtap="onClickItem">
 		<image class="icon"></image>
 		<text class="name">不限</text>	
-	</view>
+	</view> -->
 	<view class="item" wx:for="{{plateforms}}" wx:key="index" data-item="{{item}}" catchtap="onClickItem">
 		<image class="icon" src="{{item.icon}}"></image>
 		<text class="name">{{item.name}}</text>	

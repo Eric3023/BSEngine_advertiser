@@ -66,12 +66,13 @@ Page({
   },
 
   /**
-   * 点击搜索结果
+   * 查看主播主页
    */
-  onClickItem: function (event) {
+  onClickItem: function(event){
     let item = event.currentTarget.dataset.item
+    let url = item.indexUrl
     wx.navigateTo({
-      url: `/pages/webview/webview?url=${item.indexUrl}`,
+      url: `/pages/webview/webview?url=${url}`,
     })
   },
 

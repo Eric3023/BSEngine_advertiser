@@ -46,8 +46,19 @@ Page({
   },
 
   /**
-     * 重置数据
-     */
+   * 查看主播主页
+   */
+  onClickItem: function(event){
+    let item = event.currentTarget.dataset.item
+    let url = item.indexUrl
+    wx.navigateTo({
+      url: `/pages/webview/webview?url=${url}`,
+    })
+  },
+
+  /**
+   * 重置数据
+   */
   _reset(value) {
     this.setData({
       list: [],

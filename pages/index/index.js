@@ -104,6 +104,17 @@ Page({
   },
 
   /**
+   * 查看主播主页
+   */
+  onClickItem: function(event){
+    let item = event.currentTarget.dataset.item
+    let url = item.indexUrl
+    wx.navigateTo({
+      url: `/pages/webview/webview?url=${url}`,
+    })
+  },
+
+  /**
    * 数据分列
    */
   _initData: function () {

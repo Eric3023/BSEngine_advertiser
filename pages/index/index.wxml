@@ -20,7 +20,9 @@
 		<!-- 平台海报 -->
 		<view class="case-list">
 			<view class="body">
-				<v_anchor class="item" wx:for="{{list}}" wx:key="index" imgurl="{{item.headImg}}" name="{{item.accountName}}" fans="{{format.hexFormat(item.fansNum)}}" price="{{item.price}}" />
+				<view class="item" wx:for="{{list}}" wx:key="index" catchtap="onClickItem" data-item="{{item}}">
+					<v_anchor imgurl="{{item.headImg}}" name="{{item.accountName}}" fans="{{format.hexFormat(item.fansNum)}}" price="{{item.price}}" />
+				</view>
 				<!-- <view class="body_left">
 					<v_anchor class="item" wx:for="{{list}}" wx:key="index" imgurl="{{item.headImg}}" name="{{item.accountName}}" fans="{{format.hexFormat(item.fansNum)}}" price="{{item.price}}" />
 				</view>
