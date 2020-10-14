@@ -7,8 +7,8 @@ Page({
    */
   data: {
     list: [
-      { icon: "/img/mine/icon_mine_collection.jpg", title: "修改密码" },
-      { icon: "/img/mine/icon_mine_proxy.jpg", title: "关于我们" },
+      { icon: "/img/mine/icon_password.png", title: "修改密码" },
+      { icon: "/img/mine/icon_mine_collection.jpg", title: "关于我们" },
       { icon: "/img/mine/icon_mine_setting.png", title: "退出登录" }
     ]
   },
