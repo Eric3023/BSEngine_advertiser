@@ -157,43 +157,8 @@ page {
 }
 
 .item .state{
-  width: 108rpx;
-  height: 108rpx;
+  width: 120rpx;
+  height: 120rpx;
   color: white;
   border-radius: 50%;
-}
-
-.wait_test {
-  background: linear-gradient(to right, #778dff, #0b53eb);
-  font-size: 28rpx;
-}
-
-.wait_pay {
-  background: linear-gradient(to right, #ff77f4, #ff53cf);
-  font-size: 28rpx;
-}
-
-.payed {
-  background: linear-gradient(to right, #fd96cb, #ff23af);
-  font-size: 28rpx;
-}
-
-.throwing {
-  background: linear-gradient(to right, #ebc071, #fea602);
-  font-size: 28rpx;
-}
-
-.completed {
-  background: linear-gradient(to right, #c7fd0b, #7cdc01);
-  font-size: 28rpx;
-}
-
-.fail {
-  background: linear-gradient(to right, #c23fff, #b905dc);
-  font-size: 24rpx;
-}
-
-.paused{
-  background: linear-gradient(to right, #ababab, #909090);
-  font-size: 28rpx;
 }

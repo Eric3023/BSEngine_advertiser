@@ -54,20 +54,20 @@
 			<text class="title">活动描述</text>
 			<textarea class="desc" model:value="{{data.desc}}" bindinput="onChangeDesc"></textarea>
 		</view>
-		<view class="param">
+		<!-- <view class="param">
 			<text class="title">订单量</text>
 			<input class="order" model:value="{{data.orderNum}}" type="digist" bindinput="onOrderChanged" maxlength="{{maxOrderLength}}" placeholder="请输入订单数量"></input>
-		</view>
+		</view> -->
 		<view class="param">
 			<view class="row">
 				<view class="column">
 					<text class="title">单价</text>
-					<input class="order" model:value="{{data.unitPrice}}" type="number" bindinput="onPriceChanged" maxlength="{{maxPriceLength}}" placeholder="请输入单价"></input>
+					<input class="order" model:value="{{data.totalPrice}}" type="number" bindinput="onPriceChanged" maxlength="{{maxPriceLength}}" placeholder="请输入单价"></input>
 				</view>
-				<view class="column">
+				<!-- <view class="column">
 					<text class="title">总价</text>
 					<text class="price">{{totalPrice? totalPrice:(data.totalPrice?data.totalPrice:0)}}元</text>
-				</view>
+				</view> -->
 			</view>
 		</view>
 		<view class="param">

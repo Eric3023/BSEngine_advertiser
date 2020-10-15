@@ -279,7 +279,7 @@ Page({
    */
   onPriceChanged: function (e) {
     let value = e.detail.value
-    this.data.data.unitPrice = value
+    this.data.data.totalPrice = value
 
     let maxPriceLength = -1
     let index = value.lastIndexOf('.')
@@ -291,7 +291,7 @@ Page({
       data: this.data.data
     })
 
-    this._calTotl()
+    // this._calTotl()
   },
 
   /**
@@ -375,16 +375,16 @@ Page({
       return
     }
     
-    //订单量
-    if (this.data.data.orderNum == undefined || this.data.data.orderNum <= 0){
-      wx.showToast({
-        title: '请输入订单数量',
-        icon: 'none',
-      })
-      return
-    }
+    // //订单量
+    // if (this.data.data.orderNum == undefined || this.data.data.orderNum <= 0){
+    //   wx.showToast({
+    //     title: '请输入订单数量',
+    //     icon: 'none',
+    //   })
+    //   return
+    // }
     //单价
-    if (this.data.data.unitPrice == undefined || this.data.dataunitPrice <= 0 || this.data.data.unitPrice >= 10000000){
+    if (this.data.data.totalPrice == undefined || this.data.data.totalPrice <= 0 || this.data.data.totalPrice >= 10000000){
       wx.showToast({
         title: '请输入合法的单价',
         icon: 'none',

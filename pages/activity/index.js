@@ -191,22 +191,22 @@ Page({
     })
   },
 
-  /**
-   * 输入订单改变
-   */
-  onOrderChanged: function (e) {
-    let value = e.detail.value
-    let maxOrderLength = -1
-    let index = value.lastIndexOf('.')
-    if (index != -1) {
-      maxOrderLength = index + 1;
-    }
-    this.setData({
-      maxOrderLength,
-    })
+  // /**
+  //  * 输入订单改变
+  //  */
+  // onOrderChanged: function (e) {
+  //   let value = e.detail.value
+  //   let maxOrderLength = -1
+  //   let index = value.lastIndexOf('.')
+  //   if (index != -1) {
+  //     maxOrderLength = index + 1;
+  //   }
+  //   this.setData({
+  //     maxOrderLength,
+  //   })
 
-    this._calTotl()
-  },
+  //   this._calTotl()
+  // },
 
   /**
    * 输入单价改变
@@ -222,7 +222,7 @@ Page({
       maxPriceLength,
     })
 
-    this._calTotl()
+    // this._calTotl()
   },
 
   /**
@@ -276,23 +276,23 @@ Page({
     if (this.data.desc != undefined) {
       param.desc = this.data.desc
     }
-    //订单量
-    if (this.data.orderNum != undefined && this.data.orderNum > 0) {
-      param.orderNum = this.data.orderNum
-    } else {
-      wx.showToast({
-        title: '请输入订单数量',
-        icon: 'none',
-      })
-      return
-    }
+    // //订单量
+    // if (this.data.orderNum != undefined && this.data.orderNum > 0) {
+    //   param.orderNum = this.data.orderNum
+    // } else {
+    //   wx.showToast({
+    //     title: '请输入订单数量',
+    //     icon: 'none',
+    //   })
+    //   return
+    // }
     //单价
-    if (this.data.unitPrice != undefined && this.data.unitPrice > 0 && this.data.unitPrice < 10000000) {
+    if (this.data.totalPrice != undefined && this.data.totalPrice > 0 && this.data.totalPrice < 10000000000) {
       param.unitPrice = this.data.unitPrice
       param.totalPrice = this.data.totalPrice
     } else {
       wx.showToast({
-        title: '请输入合法的单价',
+        title: '请输入合法的价格',
         icon: 'none',
       })
       return

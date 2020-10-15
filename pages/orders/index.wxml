@@ -48,7 +48,8 @@
 						</view>
 						<view class="money margin">消费金额：{{item.totalPrice}}元</view>
 					</view>
-					<view class="{{util.getClass(item.status)}} center state" catchtap="{{item.status==1?'onSettle':''}}" data-item="{{item}}">{{util.getStatus(item.status)}}</view>
+					<!-- <view class="{{util.getClass(item.status)}} center state" catchtap="{{item.status==1?'onSettle':''}}" data-item="{{item}}">{{util.getStatus(item.status)}}</view> -->
+					<image class="center state" catchtap="{{item.status==1?'onSettle':''}}" data-item="{{item}}" src="{{util.getStatus(item.status)}}"></image>
 				</view>
 			</block>
 		</view>

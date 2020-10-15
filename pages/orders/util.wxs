@@ -1,42 +1,22 @@
 var getStatus = function (type) {
   switch (type) {
     case 0:
-      return '待审核'
+      return '/img/status/wait_test.png'
     case 1:
-      return '待支付'
+      return '/img/status/wait_pay.png'
     case 2:
-      return '已支付'
+      return '/img/status/payed.png'
     case 3:
-      return '投放中'
+      return '/img/status/throwing.png'
     case 4:
-      return '已完成'
+      return '/img/status/completed.png'
     case 5:
-      return '审核失败'
+      return '/img/status/fail.png'
     case 6:
-      return '暂停中'
-  }
-}
-
-var getClass = function (type) {
-  switch (type) {
-    case 0:
-      return 'wait_test'
-    case 1:
-      return 'wait_pay'
-    case 2:
-      return 'payed'
-    case 3:
-      return 'throwing'
-    case 4:
-      return 'completed'
-    case 5:
-      return 'fail'
-    case 6:
-      return 'paused'
+      return '/img/status/paused.png'
   }
 }
 
 module.exports = {
   getStatus: getStatus,
-  getClass: getClass,
 }
